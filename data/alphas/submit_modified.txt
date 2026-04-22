@@ -1,0 +1,289 @@
+regression_neut(group_rank(ts_rank(est_eps/low, 252), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(est_eps/low, 252), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(est_eps/close, 120), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(est_eps/close, 120), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/vwap, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/vwap, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/open, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/open, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/high, 90), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/high, 90), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/low, 60), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/low, 60), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/vwap, 60), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebitda/vwap, 60), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/low, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/low, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/close, 90), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/close, 90), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/cap, 180), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/cap, 180), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/vwap, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/vwap, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/close, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/close, 20), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/cap, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(equity/cap, 20), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/open, 90), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebitda/open, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/high, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/high, 20), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/cap, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/cap, 40), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(rank(implied_volatility_call_120/parkinson_volatility_120), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+group_neutralize(rank(implied_volatility_call_120/parkinson_volatility_120), sector)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.0, group_neutralize(implied_volatility_call_60-implied_volatility_put_30, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.0, regression_neut(implied_volatility_call_60-implied_volatility_put_30, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.0, signed_power(implied_volatility_call_60-implied_volatility_put_30, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 0.8, group_neutralize(implied_volatility_call_60-implied_volatility_put_30, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 0.8, regression_neut(implied_volatility_call_60-implied_volatility_put_30, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 0.8, signed_power(implied_volatility_call_60-implied_volatility_put_30, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.0, group_neutralize(implied_volatility_call_60-implied_volatility_put_90, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.0, regression_neut(implied_volatility_call_60-implied_volatility_put_90, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.0, signed_power(implied_volatility_call_60-implied_volatility_put_90, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.1, group_neutralize(implied_volatility_call_60-implied_volatility_put_90, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.1, regression_neut(implied_volatility_call_60-implied_volatility_put_90, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.1, signed_power(implied_volatility_call_60-implied_volatility_put_90, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.1, group_neutralize(implied_volatility_call_60-implied_volatility_put_60, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.1, regression_neut(implied_volatility_call_60-implied_volatility_put_60, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.1, signed_power(implied_volatility_call_60-implied_volatility_put_60, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.2, group_neutralize(implied_volatility_call_60-implied_volatility_put_60, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.2, regression_neut(implied_volatility_call_60-implied_volatility_put_60, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.2, signed_power(implied_volatility_call_60-implied_volatility_put_60, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_30 < 1.2, group_neutralize(implied_volatility_call_30-implied_volatility_put_30, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_30 < 1.2, regression_neut(implied_volatility_call_30-implied_volatility_put_30, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_30 < 1.2, signed_power(implied_volatility_call_30-implied_volatility_put_30, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_270 < 1, group_neutralize(implied_volatility_call_270-implied_volatility_put_270, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_270 < 1, regression_neut(implied_volatility_call_270-implied_volatility_put_270, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_270 < 1, signed_power(implied_volatility_call_270-implied_volatility_put_270, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.2, group_neutralize(implied_volatility_call_60-implied_volatility_put_180, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.2, regression_neut(implied_volatility_call_60-implied_volatility_put_180, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_360 < 1.2, signed_power(implied_volatility_call_60-implied_volatility_put_180, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.1, group_neutralize(implied_volatility_call_60-implied_volatility_put_180, sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.1, regression_neut(implied_volatility_call_60-implied_volatility_put_180, log(cap)), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(pcr_oi_60 < 1.1, signed_power(implied_volatility_call_60-implied_volatility_put_180, 0.5), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/open, 180), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/open, 180), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/open, 180), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/open, 180), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(operating_income/open, 180), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(operating_income/open, 180), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/high, 60), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/high, 60), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/high, 60), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(revenue/high, 60), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(revenue/high, 60), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(revenue/high, 60), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(est_eps/open, 252), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(est_eps/open, 252), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(est_eps/open, 252), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(est_eps/open, 252), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(est_eps/open, 252), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(est_eps/open, 252), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(eps/low, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(eps/low, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(eps/low, 40), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(eps/low, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(eps/low, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(eps/low, 40), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/open, 60), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/open, 60), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/open, 60), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(cash/open, 60), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(cash/open, 60), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(cash/open, 60), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/cap, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/cap, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(equity/cap, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(equity/cap, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(equity/cap, 20), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/close, 90), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/close, 90), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(operating_income/close, 90), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(operating_income/close, 90), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/vwap, 60), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/vwap, 60), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/vwap, 60), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(sales/vwap, 60), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(sales/vwap, 60), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(sales/vwap, 60), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/cap, 90), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/cap, 90), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/cap, 90), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/cap, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(operating_income/cap, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(operating_income/cap, 90), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/adv20, 252), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/adv20, 252), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/adv20, 252), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(sales/adv20, 252), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(sales/adv20, 252), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(sales/adv20, 252), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/cap, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/cap, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/cap, 40), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebitda/cap, 40), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(ebitda/cap, 40), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(ebitda/cap, 40), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/cap, 180), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/cap, 180), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/cap, 180), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/cap, 180), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(ebit/cap, 180), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(ebit/cap, 180), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/low, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/low, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/low, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(assets/low, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(assets/low, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(assets/low, 20), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/open, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/open, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/open, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(revenue/open, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(revenue/open, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(revenue/open, 20), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/low, 90), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/low, 90), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/low, 90), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/low, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(operating_income/low, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(operating_income/low, 90), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/open, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/open, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/open, 40), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(assets/open, 40), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(assets/open, 40), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(assets/open, 40), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/cap, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/cap, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/cap, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(debt/cap, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(debt/cap, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(debt/cap, 20), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/close, 90), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/close, 90), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/close, 90), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(assets/close, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(assets/close, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(assets/close, 90), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(est_eps/adv20, 252), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(est_eps/adv20, 252), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(est_eps/adv20, 252), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(est_eps/adv20, 252), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(est_eps/adv20, 252), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(est_eps/adv20, 252), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/low, 120), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/low, 120), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/low, 120), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(debt/low, 120), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(debt/low, 120), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(debt/low, 120), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/low, 180), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/low, 180), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(sales/low, 180), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(sales/low, 180), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(sales/low, 180), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(sales/low, 180), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/volume, 252), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/volume, 252), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/volume, 252), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/volume, 252), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(ebit/volume, 252), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(ebit/volume, 252), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/high, 90), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/high, 90), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/high, 90), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(debt/high, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(debt/high, 90), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(debt/high, 90), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/high, 252), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/high, 252), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/high, 252), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/high, 252), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(ebit/high, 252), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(ebit/high, 252), subindustry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/cap, 252), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/cap, 252), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/cap, 252), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(cash/cap, 252), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(cash/cap, 252), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(cash/cap, 252), subindustry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/low, 60), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/low, 60), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/low, 60), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(equity/low, 60), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(equity/low, 60), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(equity/low, 60), subindustry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/high, 90), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/high, 90), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/high, 90), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(assets/high, 90), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(assets/high, 90), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(assets/high, 90), subindustry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/adv20, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/adv20, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/adv20, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebitda/adv20, 20), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(ebitda/adv20, 20), subindustry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(ebitda/adv20, 20), subindustry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/vwap, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/vwap, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(operating_income/vwap, 40), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(operating_income/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(operating_income/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(operating_income/vwap, 40), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/volume, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/volume, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(assets/volume, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(assets/volume, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(assets/volume, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(assets/volume, 20), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/returns, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/returns, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/returns, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(revenue/returns, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(revenue/returns, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(revenue/returns, 20), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/vwap, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/vwap, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebit/vwap, 40), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebit/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(ebit/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(ebit/vwap, 40), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/returns, 120), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/returns, 120), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(cash/returns, 120), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(cash/returns, 120), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(cash/returns, 120), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(cash/returns, 120), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/vwap, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/vwap, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(ebitda/vwap, 40), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(ebitda/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(ebitda/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(ebitda/vwap, 40), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/volume, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/volume, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(debt/volume, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(debt/volume, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(debt/volume, 20), industry), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(debt/volume, 20), industry), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/vwap, 20), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/vwap, 20), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(revenue/vwap, 20), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(revenue/vwap, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(revenue/vwap, 20), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(revenue/vwap, 20), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(retained_earnings/vwap, 40), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(retained_earnings/vwap, 40), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(retained_earnings/vwap, 40), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(retained_earnings/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(retained_earnings/vwap, 40), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(retained_earnings/vwap, 40), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/returns, 180), sector), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/returns, 180), industry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+regression_neut(group_rank(ts_rank(equity/returns, 180), subindustry), log(cap))|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(volume > adv20, group_rank(ts_rank(equity/returns, 180), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+trade_when(scl12_buzz > ts_mean(scl12_buzz, 40), group_rank(ts_rank(equity/returns, 180), sector), -1)|TOP3000|1|SUBINDUSTRY|30|0.08
+vector_neut(group_rank(ts_rank(equity/returns, 180), sector), scl12_buzz)|TOP3000|1|SUBINDUSTRY|30|0.08

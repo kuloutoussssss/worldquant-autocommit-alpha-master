@@ -1,0 +1,25 @@
+# WorldQuant Alpha Manager Docker Compose
+version: '3.8'
+
+services:
+  alpha-manager:
+    build: .
+    container_name: worldquant-alpha-manager
+    ports:
+      - "8501:8501"
+    volumes:
+      # 持久化数据
+      - ./data:/app/data
+      - ./logs:/app/logs
+      # 配置文件
+      - ./.env:/app/.env:ro
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sqlite3; sqlite3.connect('/app/data/alphas.db')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

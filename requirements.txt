@@ -1,0 +1,22 @@
+# WorldQuant Brain Alpha 自动化系统依赖项
+
+# API客户端
+requests>=2.31.0
+aiohttp>=3.9.0
+
+# 环境变量管理
+python-dotenv>=1.0.0
+
+# FastAPI Web API 服务器
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-multipart>=0.0.6
+
+# Streamlit 前端
+streamlit>=1.28.0
+plotly>=5.18.0
+
+# 分页支持
+fastapi-pagination>=0.12.0

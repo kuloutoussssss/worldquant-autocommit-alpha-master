@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info
+dist
+build
+
+# 虚拟环境
+.venv
+venv
+ENV
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 测试文件
+test/
+*.pyc
+
+# Streamlit
+.streamlit/secrets.toml
+
+# 其他
+.DS_Store
+Thumbs.db
+README.md
+*.md
