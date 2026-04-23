@@ -853,9 +853,205 @@ def search_alphas():
         return jsonify({"success": False, "error": str(e)}), 500
 
 
+# ========== 中性化组合测试 API ==========
+
+@app.route('/api/neutralization/options', methods=['GET'])
+def get_neutralization_options_api():
+    """获取中性化选项"""
+    from core.neutralization_tester import NEUTRALIZATION_OPTIONS, get_quality_conditions_description
+    return jsonify({
+        'success': True,
+        'regions': NEUTRALIZATION_OPTIONS,
+        'max_trade': ['ON', 'OFF'],
+        'quality_conditions': get_quality_conditions_description()
+    })
+
+
+@app.route('/api/neutralization/test', methods=['POST'])
+def test_neutralization_combinations_api():
+    """
+    测试中性化组合
+
+    Request Body:
+        {
+            "alpha_id": "KPwOMNk1",  # Alpha ID
+            "expression": "...",      # 可选，如果提供则直接使用
+            "region": "USA",          # 可选
+            "concurrency": 1          # 可选，默认1（同步）
+        }
+    """
+    from core.neutralization_tester import NeutralizationTester
+    from core.api_client import BrainAPIClient
+
+    data = request.json or {}
+    alpha_id = data.get('alpha_id')
+    expression = data.get('expression')
+
+    if not alpha_id and not expression:
+        return jsonify({'success': False, 'error': '必须提供 alpha_id 或 expression'}), 400
+
+    client = BrainAPIClient()
+
+    # 如果提供了 alpha_id，获取表达式和设置
+    if alpha_id and not expression:
+        try:
+            alpha_info = client.get_alpha(alpha_id)
+            if not alpha_info:
+                return jsonify({'success': False, 'error': f'无法获取Alpha {alpha_id}'}), 404
+
+            expression = alpha_info.get('regular', {}).get('code', '')
+            if not expression:
+                return jsonify({'success': False, 'error': 'Alpha表达式为空'}), 400
+
+            region = data.get('region', alpha_info.get('settings', {}).get('region', 'USA'))
+            universe = data.get('universe', alpha_info.get('settings', {}).get('universe', 'TOP3000'))
+            decay = data.get('decay', int(alpha_info.get('settings', {}).get('decay', 30)))
+            truncation = data.get('truncation', float(alpha_info.get('settings', {}).get('truncation', 0.08)))
+        except Exception as e:
+            return jsonify({'success': False, 'error': f'获取Alpha信息失败: {str(e)}'}), 500
+    else:
+        region = data.get('region', 'USA')
+        universe = data.get('universe', 'TOP3000')
+        decay = data.get('decay', 30)
+        truncation = data.get('truncation', 0.08)
+
+    concurrency = data.get('concurrency', 1)
+
+    try:
+        tester = NeutralizationTester(
+            expression=expression,
+            region=region,
+            universe=universe,
+            decay=decay,
+            truncation=truncation,
+            base_alpha_id=alpha_id,
+            progress_callback=None
+        )
+
+        results = tester.test_all_combinations(concurrency=concurrency)
+
+        return jsonify({
+            'success': True,
+            'results': [r.to_dict() for r in results],
+            'summary': tester.get_summary()
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/neutralization/quality-check', methods=['POST'])
+def check_neutralization_quality_api():
+    """检查单个Alpha是否符合优质条件"""
+    from core.neutralization_tester import is_quality_alpha
+
+    data = request.json or {}
+
+    result = {
+        'sharpe': float(data.get('sharpe', 0)),
+        'turnover': float(data.get('turnover', 1)),
+        'margin': float(data.get('margin', 0))
+    }
+
+    quality = is_quality_alpha(result)
+
+    # 确定匹配的条件
+    matched = 0
+    if quality:
+        if result['turnover'] <= 0.4 and abs(result['sharpe']) >= 1.5 and abs(result['margin']) >= 0.001:
+            matched = 2
+        elif result['turnover'] <= 0.4 and abs(result['sharpe']) >= 1.2 and abs(result['margin']) >= 0.0009:
+            matched = 1
+        elif result['turnover'] <= 0.6 and abs(result['sharpe']) >= 2.0 and abs(result['margin']) >= 0.0015:
+            matched = 3
+
+    return jsonify({
+        'success': True,
+        'is_quality': quality,
+        'matched_condition': matched
+    })
+
+
+@app.route('/api/neutralization/batch-test', methods=['POST'])
+def batch_neutralization_test_api():
+    """
+    批量中性化测试
+
+    Request Body:
+        {
+            "alphas": [
+                {"alpha_id": "xxx", "expression": "..."},
+                {"alpha_id": "yyy", "expression": "..."}
+            ],
+            "region": "USA",
+            "concurrency": 1
+        }
+    """
+    from core.neutralization_tester import NeutralizationTester
+
+    data = request.json or {}
+    alphas = data.get('alphas', [])
+    region = data.get('region', 'USA')
+    concurrency = data.get('concurrency', 1)
+
+    if not alphas:
+        return jsonify({'success': False, 'error': 'alphas 列表不能为空'}), 400
+
+    results = []
+    completed = 0
+
+    for alpha_item in alphas:
+        alpha_id = alpha_item.get('alpha_id')
+        expression = alpha_item.get('expression')
+
+        if not alpha_id and not expression:
+            results.append({
+                'alpha_id': alpha_id or 'unknown',
+                'status': 'error',
+                'error': 'alpha_id 和 expression 都为空'
+            })
+            continue
+
+        try:
+            tester = NeutralizationTester(
+                expression=expression,
+                region=region,
+                base_alpha_id=alpha_id,
+                progress_callback=None
+            )
+
+            test_results = tester.test_all_combinations(concurrency=concurrency)
+
+            results.append({
+                'alpha_id': alpha_id,
+                'status': 'success',
+                'results': [r.to_dict() for r in test_results],
+                'summary': tester.get_summary()
+            })
+            completed += 1
+
+        except Exception as e:
+            results.append({
+                'alpha_id': alpha_id,
+                'status': 'error',
+                'error': str(e)
+            })
+
+    return jsonify({
+        'success': True,
+        'total': len(alphas),
+        'completed': completed,
+        'failed': len(alphas) - completed,
+        'results': results
+    })
+
+
 # ========== 启动函数 ==========
 
-def run_api_server(host='0.0.0.0', port=18888):
+def run_api_server(host='0.0.0.0', port=None):
+    """运行 API 服务器 (多线程模式)"""
+    # 默认端口 5000，与前端 API_BASE 一致
+    if port is None:
+        port = int(os.environ.get('API_PORT', 5000))
     """运行 API 服务器 (多线程模式)"""
     # 使用 waitress 如果可用，否则用 Flask 内置服务器
     try:
