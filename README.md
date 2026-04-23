@@ -20,10 +20,12 @@
   - HIGH_TURNOVER（高换手率 ≤ 0.70）
   - CONCENTRATED_WEIGHT（权重集中度）
   - LOW_SUB_UNIVERSE_SHARPE（子宇宙夏普率）
-- 🚀 **一键工作流** - 回测 + 筛选 + 提交全自动
+- ⚡ **批量中性化回测** - 筛选后直接批量测试多种中性化组合
+- 🚀 **一键工作流** - 回测 + 筛选 + 中性化 + 提交全自动
 - 💾 自动维护未提交 Alpha 列表
 - 📝 完善的日志系统
 - 🛡️ 程序中断保护
+- 🌐 Web 管理界面 - Streamlit 可视化操作
 
 ## 项目结构
 
@@ -35,6 +37,7 @@ worldquant-autocommit-alpha/
 ├── api_client.py              # WorldQuant Brain API 客户端
 ├── filter.py                  # Alpha 合格筛选逻辑
 ├── batch_tester.py            # 批量回测器
+├── neutralization_tester.py   # 中性化组合测试器
 ├── importer.py                # 导入功能
 ├── submit.py                  # 提交功能
 ├── workflow.py                # 一键工作流
@@ -46,6 +49,14 @@ worldquant-autocommit-alpha/
 │   │   └── to_test.txt       # 待回测列表
 │   ├── results/              # 回测结果
 │   └── qualified/            # 达标 Alpha
+├── web/                       # Web 管理界面
+│   ├── app.py                # Streamlit 主入口
+│   ├── api_server.py         # Flask API 服务器
+│   ├── pages/                # 页面模块
+│   │   ├── filter.py         # 筛选与中性化
+│   │   ├── backtest.py       # 批量回测
+│   │   └── neutralization.py # 独立中性化测试
+│   └── api/                  # API 路由
 └── README.md
 ```
 
@@ -57,9 +68,12 @@ worldquant-autocommit-alpha/
 | `api_client.py` | API 认证、模拟、提交 |
 | `filter.py` | 6 项指标筛选逻辑 |
 | `batch_tester.py` | 批量回测器 |
+| `neutralization_tester.py` | 中性化组合测试器 |
 | `importer.py` | 导入 CSV/JSON 结果 |
 | `submit.py` | 批量提交 |
 | `workflow.py` | 一键工作流 |
+| `web/app.py` | Streamlit Web 界面 |
+| `web/api_server.py` | Flask REST API |
 
 ## 安装步骤
 
@@ -95,7 +109,22 @@ WORLDSQUANT_PASSWORD=你的密码
 
 ## 使用方法
 
-### 方式一：批量回测
+### 方式一：Web 界面（推荐）
+
+```bash
+python main.py
+```
+
+启动后访问：
+- **前端**: http://localhost:8501
+- **API**: http://localhost:5000
+
+Web 界面功能：
+- 🔬 **批量回测** - 提交和管理回测任务
+- 🔍 **筛选与中性化** - 筛选达标 Alpha，支持批量中性化回测
+- 📤 **提交** - 一键提交合格 Alpha
+
+### 方式二：批量回测
 
 ```bash
 python alpha_commit.py
@@ -106,7 +135,7 @@ python alpha_commit.py
 2. 逐个回测并记录结果
 3. 保存到 `data/results/` 和 `data/qualified/`
 
-### 方式二：一键工作流（推荐）
+### 方式三：一键工作流（推荐）
 
 ```bash
 python alpha_commit.py
@@ -119,7 +148,7 @@ Step 2: 筛选合格 Alpha (6 项指标全部 PASS)
 Step 3: 提交到 WorldQuant Brain
 ```
 
-### 方式三：导入并提交
+### 方式四：导入并提交
 
 选择选项 `5`，可从以下来源导入：
 - alpha-tools 结果目录
@@ -127,6 +156,15 @@ Step 3: 提交到 WorldQuant Brain
 - 自定义路径
 
 导入后询问是否立即提交。
+
+### 批量中性化回测（Web 界面）
+
+1. 进入"筛选与导出"页面
+2. 设置筛选条件，查看达标 Alpha
+3. 勾选需要中性化的 Alpha
+4. 选择区域和 maxTrade 模式
+5. 点击"批量中性化回测"
+6. 查看所有中性化组合的结果
 
 ## Alpha 表达式格式
 
@@ -180,7 +218,14 @@ ts_mean(returns, 10) | TOP1000 | 3 | MARKET | 0.01
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  3. 提交到 WorldQuant Brain                                 │
+│  3. 批量中性化回测 (可选)                                    │
+│  - 测试所有中性化方式 × maxTrade 组合                         │
+│  - 筛选优质 Alpha 并打标签                                   │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────────┐
+│  4. 提交到 WorldQuant Brain                                 │
 │  - 批量提交合格 Alpha                                        │
 │  - 自动重试 + SC 因子检测                                    │
 └─────────────────────────────────────────────────────────────┘
@@ -201,6 +246,14 @@ ts_mean(returns, 10) | TOP1000 | 3 | MARKET | 0.01
 **解决**：调整 Alpha 表达式参数（降低 Decay、调整 Truncation 等）
 
 ## 版本历史
+
+### v0.5.0 - 中性化功能整合
+
+- ✅ 筛选页面整合中性化功能
+- ✅ 支持批量中性化回测
+- ✅ 添加 `neutralization_tester.py` 中性化组合测试器
+- ✅ Web 界面支持勾选 Alpha 批量操作
+- ✅ 添加优质 Alpha 筛选条件（换手率/Sharpe/Margin）
 
 ### v0.4.0 - 统一重构
 
