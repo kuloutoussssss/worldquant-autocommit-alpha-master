@@ -20,41 +20,29 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual environment
+# Virtual environments
 .venv/
 venv/
 ENV/
+env/
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+*~
+
+# Memory files (项目上下文和对话记忆)
+.memory/
 
 # Logs
 logs/
 *.log
 
-# Data files (keep structure, ignore contents)
-data/*.json
+# Data
+data/sessions/
 data/*.db
-data/**/*.json
-!data/api_valid_variables.py
-!data/alpha_templates.py
-!data/task_progress/*.json
-
-# API credentials
-.env
-.env.local
-credentials.json
-config.local.yaml
-
-# Cache
-*.pyc
-*.pyo
-.pytest_cache/
-.coverage
-htmlcov/
 
 # OS
 .DS_Store
