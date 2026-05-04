@@ -6,6 +6,15 @@ from .api_client import BrainAPIClient
 from .db_manager import get_database
 from .backtest_engine import BacktestEngine, BacktestResult
 from .submit import submit_alpha_ids, submit_from_db
+from .neutralization_tester import (
+    NeutralizationTester,
+    NeutralizationResult,
+    test_neutralization_combinations,
+    get_neutralization_options,
+    is_quality_alpha,
+    get_quality_conditions_description,
+    NEUTRALIZATION_OPTIONS
+)
 
 # 异步模块（可选导入，需要 aiohttp）
 try:
@@ -37,4 +46,12 @@ __all__ = [
     'submit_alpha_ids_sync',
     'ASYNC_AVAILABLE',
     'ASYNC_SUBMIT_AVAILABLE',
+    # 中性化测试模块
+    'NeutralizationTester',
+    'NeutralizationResult',
+    'test_neutralization_combinations',
+    'get_neutralization_options',
+    'is_quality_alpha',
+    'get_quality_conditions_description',
+    'NEUTRALIZATION_OPTIONS',
 ]

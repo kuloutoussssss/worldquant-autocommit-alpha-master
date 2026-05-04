@@ -14,7 +14,7 @@ from .db_manager import get_database
 from .logger import logger
 
 # 并发配置 - 安全设置
-DEFAULT_CONCURRENCY = 1  # 提交并发数（安全值：1）
+DEFAULT_CONCURRENCY = 2  # 提交并发数
 MAX_RETRIES = 3  # 最大重试次数
 RETRY_DELAY = 30  # 429 重试延迟（秒）
 REQUEST_DELAY = 3.0  # 请求间隔（秒），确保API不超限

@@ -10,11 +10,33 @@ import requests
 import json
 import time
 from typing import List, Dict, Any, Optional
+from typing import Dict as TypeDict  # 避免与 Dict 字典冲突
 from pathlib import Path
+from requests.auth import HTTPBasicAuth
+
+
+def authenticate(session: requests.Session, username: str, password: str) -> bool:
+    """认证并获取 session token"""
+    url = "https://api.worldquantbrain.com/authentication"
+    try:
+        response = session.post(url, auth=HTTPBasicAuth(username, password), timeout=30)
+        if response.status_code == 201:
+            data = response.json()
+            session.token_expiry = data.get("token", {}).get("expiry", 0)
+            print("认证成功")
+            return True
+        else:
+            print(f"认证失败: {response.status_code} - {response.text[:200]}")
+            return False
+    except Exception as e:
+        print(f"认证错误: {e}")
+        return False
 
 
 def get_all_datafields_with_pagination(
     sess: requests.Session,
+    username: str,
+    password: str,
     instrument_type: str = 'EQUITY',
     region: str = 'USA',
     universe: str = 'TOP3000',
@@ -26,6 +48,8 @@ def get_all_datafields_with_pagination(
 
     参数:
         sess: requests会话对象
+        username: 用户名
+        password: 密码
         instrument_type: 工具类型,默认为'EQUITY'(股票)
         region: 地区,默认为'USA'
         universe: 股票池，根据数据集不同（fundamental6=TOP3000, analyst4/pv1=TOP1000）
@@ -36,17 +60,14 @@ def get_all_datafields_with_pagination(
     返回:
         全部数据字段名称列表
     """
-    # 数据集配置（与参考项目 dataset_config.py 一致）
+    # 数据集配置
     DATASET_UNIVERSE = {
         'fundamental6': 'TOP3000',
         'analyst4': 'TOP1000',
         'pv1': 'TOP1000',
     }
     
-    # 使用数据集对应的 universe
     universe = DATASET_UNIVERSE.get(dataset_id, 'TOP3000')
-    
-    # 本地缓存文件路径
     cache_file = Path(f"data/field_names_{dataset_id}_all.json")
     
     # 优先从本地缓存加载
@@ -59,11 +80,15 @@ def get_all_datafields_with_pagination(
         except Exception as e:
             print(f"加载本地缓存失败: {e},将尝试从API获取")
     
+    # 先认证
+    if not authenticate(sess, username, password):
+        return []
+    
     # 从API分页获取
     brain_api_url = "https://api.worldquantbrain.com"
     all_fields = []
     offset = 0
-    page_size = 50  # 与参考项目一致，每次50条
+    page_size = 50
     
     print(f"开始分页获取 {dataset_id} 数据集的字段...")
     
@@ -78,45 +103,121 @@ def get_all_datafields_with_pagination(
         try:
             response = sess.get(url)
             
-            # 处理429错误(请求过于频繁)
             if response.status_code == 429:
                 wait_time = 2 ** (offset // page_size + 1)
                 print(f"触发速率限制(429),等待{wait_time}秒后重试...")
                 time.sleep(wait_time)
                 continue
             
+            if response.status_code == 401:
+                print("认证过期,重新认证...")
+                if not authenticate(sess, username, password):
+                    break
+                continue
+            
             response.raise_for_status()
             data = response.json()
             
-            # 提取字段名称，过滤矩阵类型字段（与参考项目一致）
-            fields = [f.get('id') for f in data.get('results', []) if f.get('id') and f.get('type') == 'MATRIX']
-            all_fields.extend(fields)
+            # 处理不同响应格式
+            if isinstance(data, list):
+                results = data
+            else:
+                results = data.get('results', [])
             
-            print(f"  已获取 {len(all_fields)} 个字段 (offset={offset})")
+            # 获取总数用于判断是否继续（API返回count字段）
+            total = data.get('count', len(all_fields)) if isinstance(data, dict) else len(results)
             
-            # 判断是否还有更多数据
-            if len(fields) < page_size:
+            # 收集MATRIX和VECTOR类型的字段ID
+            for f in results:
+                if isinstance(f, dict):
+                    ftype = f.get('type')
+                    fid = f.get('id')
+                    if fid and ftype in ('MATRIX', 'VECTOR'):
+                        all_fields.append(fid)
+            print(f"  已获取 {len(all_fields)} 个字段(MATRIX+VECTOR, API total={total}, offset={offset})")
+            
+            # 如果返回的记录数小于page_size，说明已经是最后一页
+            if len(results) < page_size:
                 break
             
+            # 避免限流
             offset += page_size
-            time.sleep(0.5)  # 避免请求过快
+            time.sleep(3)
             
         except requests.exceptions.RequestException as e:
             print(f"请求失败: {e}")
             break
     
-    # 保存到本地缓存
+    # 去重并保存到本地缓存
     if all_fields:
+        unique_fields = list(dict.fromkeys(all_fields))  # 保持顺序去重
         cache_file.parent.mkdir(parents=True, exist_ok=True)
         with open(cache_file, 'w', encoding='utf-8') as f:
-            json.dump(all_fields, f, ensure_ascii=False)
-        print(f"数据字段已缓存到: {cache_file}")
+            json.dump(unique_fields, f, ensure_ascii=False)
+        print(f"数据字段已缓存到: {cache_file} ({len(unique_fields)} 个字段)")
+        return unique_fields
     
     return all_fields
 
 
+def sync_all_datasets(
+    username: str,
+    password: str,
+    progress_callback=None
+) -> Dict[str, Any]:
+    """同步所有数据集的字段到本地缓存
+    
+    参数:
+        username: 用户名
+        password: 密码
+        progress_callback: 进度回调函数，接收 (dataset_id, current, total, status) 参数
+    
+    返回:
+        包含同步结果的字典
+    """
+    datasets = [
+        ('fundamental6', 'TOP3000'),
+        ('analyst4', 'TOP1000'),
+        ('pv1', 'TOP1000'),
+    ]
+    
+    results = {}
+    total_fields = 0
+    
+    for i, (dataset_id, universe) in enumerate(datasets):
+        if progress_callback:
+            progress_callback(dataset_id, i, len(datasets), 'running')
+        
+        # 强制不使用缓存，重新获取
+        session = requests.Session()
+        fields = get_all_datafields_with_pagination(
+            sess=session,
+            username=username,
+            password=password,
+            dataset_id=dataset_id,
+            use_cache=False
+        )
+        
+        results[dataset_id] = {
+            'fields': len(fields),
+            'status': 'success' if fields else 'failed'
+        }
+        total_fields += len(fields)
+        
+        if progress_callback:
+            progress_callback(dataset_id, i + 1, len(datasets), 'done')
+    
+    return {
+        'success': True,
+        'datasets': results,
+        'total_fields': total_fields
+    }
+
+
 def get_datafields(
     sess: requests.Session,
+    username: str,
+    password: str,
     instrument_type: str = 'EQUITY',
     region: str = 'USA',
     universe: str = 'TOP3000',
@@ -127,6 +228,8 @@ def get_datafields(
     """获取指定数据集的数据字段列表（向后兼容）"""
     return get_all_datafields_with_pagination(
         sess=sess,
+        username=username,
+        password=password,
         instrument_type=instrument_type,
         region=region,
         universe=universe,
@@ -140,43 +243,65 @@ def build_advanced_factors(
     datafields: List[str],
     max_factors: int = 5000,
     strategy_mode: int = 1,
-    dataset_id: str = 'fundamental6'
+    dataset_id: str = 'fundamental6',
+    multi_dataset_fields: Dict[str, List[str]] = None,
+    seed: int = None
 ) -> List[Dict[str, Any]]:
     """根据数据字段和策略模式构建Alpha因子配置列表
 
     参数:
         datafields: 数据字段列表
         max_factors: 最大构建因子数量
-        strategy_mode: 策略模式 (1=基础策略, 2=多因子组合)
+        strategy_mode: 策略模式 (1=基础策略, 2=多因子组合, 3=跨数据集)
         dataset_id: 数据集ID
+        multi_dataset_fields: 其他数据集的字段字典
+        seed: 随机种子（用于复现）
 
     返回:
         Alpha因子配置列表
     """
     # 导入策略生成器
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent.parent))
     from scripts.alpha_strategy import AlphaStrategy
     
-    strategy = AlphaStrategy()
+    strategy = AlphaStrategy(seed=seed, random_mode=True)
+    
+    # 从数据库加载失败模式（失败次数>=2的表达式）
+    failed_patterns_count = strategy.load_failure_patterns(min_fail_count=2)
+    if failed_patterns_count > 0:
+        print(f"[FactorBuilder] 已学习 {failed_patterns_count} 个失败模式，将避免生成类似表达式")
     
     # 生成策略表达式
-    expressions = strategy.get_simulation_data(datafields, mode=strategy_mode)
+    expressions = strategy.get_simulation_data(
+        datafields, 
+        mode=strategy_mode,
+        multi_dataset_fields=multi_dataset_fields
+    )
     
     print(f"策略模式 {strategy_mode}: 生成了 {len(expressions)} 个表达式")
     
     # 限制数量
     expressions = expressions[:max_factors]
     
+    # 转换模式说明
+    mode_desc = {1: '基础策略(充分利用所有字段)', 2: '多因子组合策略', 3: '跨数据集组合策略'}
+    
     # 转换为因子配置
     alpha_factors = []
     for i, expr in enumerate(expressions, 1):
-        print(f"[{i}/{len(expressions)}] 构建因子")
+        print(f"[{i}/{len(expressions)}] {mode_desc.get(strategy_mode, '未知模式')} - 构建因子")
+        
+        # 根据数据集确定默认universe
+        universe = 'TOP3000' if dataset_id == 'fundamental6' else 'TOP1000'
         
         factor_config = {
             'stype': 'REGULAR',
             'settings': {
                 'instrumentType': 'EQUITY',
                 'region': 'USA',
-                'universe': 'TOP3000',
+                'universe': universe,
                 'delay': 1,
                 'decay': 0,
                 'neutralization': 'SUBINDUSTRY',
@@ -196,19 +321,25 @@ def build_advanced_factors(
 
 def build_factor_pipeline(
     client=None,
-    api_token: str = None,
+    username: str = None,
+    password: str = None,
     dataset_id: str = 'fundamental6',
     max_factors: int = 10,
-    strategy_mode: int = 1
+    strategy_mode: int = 1,
+    multi_dataset_ids: list = None,
+    seed: int = None
 ) -> Dict[str, Any]:
     """构建Alpha因子流水线(仅获取字段和构建因子,不执行回测)
     
     参数:
         client: BrainAPIClient 实例 (优先使用)
-        api_token: WorldQuant Brain API令牌 (格式: username:password) - 旧接口兼容
+        username: 用户名
+        password: 密码
         dataset_id: 数据集ID,默认为'fundamental6'
         max_factors: 最大构建因子数量,默认为10
-        strategy_mode: 策略模式 (1=基础策略, 2=多因子组合)
+        strategy_mode: 策略模式 (1=基础策略, 2=多因子组合, 3=跨数据集)
+        multi_dataset_ids: 其他数据集ID列表（用于模式3跨数据集组合）
+        seed: 随机种子（用于复现，固定为随机模式）
     
     返回:
         包含数据字段和因子配置的字典
@@ -216,20 +347,13 @@ def build_factor_pipeline(
     # 初始化会话
     if client is not None and hasattr(client, 'session'):
         session = client.session
+        username = username or client.email
+        password = password or client.password
         client.ensure_session()
-    elif api_token:
+    elif username:
         session = requests.Session()
-        
-        if ':' in api_token:
-            username, password = api_token.split(':', 1)
-        else:
-            username = api_token
-            password = ''
-        
-        from requests.auth import HTTPBasicAuth
-        session.auth = HTTPBasicAuth(username, password)
     else:
-        print("X 缺少认证信息,请提供 client 或 api_token")
+        print("X 缺少认证信息,请提供 client 或 username/password")
         return {
             'success': False,
             'datafields': [],
@@ -244,6 +368,8 @@ def build_factor_pipeline(
     # 第一步:获取数据字段（分页获取全部）
     datafields = get_all_datafields_with_pagination(
         sess=session,
+        username=username,
+        password=password,
         instrument_type='EQUITY',
         region='USA',
         universe='TOP3000',
@@ -259,18 +385,43 @@ def build_factor_pipeline(
             'error': '获取数据字段失败'
         }
 
-    print(f"OK 获取到 {len(datafields)} 个数据字段")
+    print(f"OK 获取到 {len(datafields)} 个数据字段 (主数据集: {dataset_id})")
+    
+    # 模式3: 获取其他数据集字段
+    multi_dataset_fields = {}
+    if strategy_mode == 3 and multi_dataset_ids:
+        print(f"\n获取跨数据集字段...")
+        for other_ds in multi_dataset_ids:
+            if other_ds != dataset_id:
+                other_fields = get_all_datafields_with_pagination(
+                    sess=session,
+                    username=username,
+                    password=password,
+                    instrument_type='EQUITY',
+                    region='USA',
+                    universe='TOP1000' if other_ds != 'fundamental6' else 'TOP3000',
+                    dataset_id=other_ds
+                )
+                if other_fields:
+                    multi_dataset_fields[other_ds] = other_fields
+                    print(f"  {other_ds}: {len(other_fields)} 个字段")
     
     print("\n" + "=" * 50)
     print("步骤2: 构建Alpha因子表达式")
     print("=" * 50)
     
-    # 根据策略模式构建因子（与参考项目一致）
+    # 模式说明
+    mode_desc = {1: '基础策略', 2: '多因子组合', 3: '跨数据集组合'}
+    print(f"策略模式: {mode_desc.get(strategy_mode, '未知')} (mode={strategy_mode})")
+    
+    # 根据策略模式构建因子
     alpha_factors = build_advanced_factors(
         datafields=datafields,
         max_factors=max_factors,
         strategy_mode=strategy_mode,
-        dataset_id=dataset_id
+        dataset_id=dataset_id,
+        multi_dataset_fields=multi_dataset_fields if multi_dataset_fields else None,
+        seed=seed
     )
 
     print(f"OK 构建了 {len(alpha_factors)} 个Alpha因子")
@@ -284,6 +435,7 @@ def build_factor_pipeline(
         'datafields': datafields,
         'factors': alpha_factors,
         'total_fields': len(datafields),
+        'multi_dataset_fields': len(sum(m.multi_dataset_fields.values(), [])) if multi_dataset_fields else 0,
         'total_factors': len(alpha_factors)
     }
 
@@ -367,11 +519,21 @@ def save_factors_for_batch_test(factors: List[Dict[str, Any]], filename: str = '
 
 
 if __name__ == "__main__":
-    # 示例用法
-    API_TOKEN = "your_api_token_here"
+    # 从 .env 加载认证信息
+    from dotenv import load_dotenv
+    load_dotenv()
+    import os
+    
+    USERNAME = os.getenv("WQ_USERNAME", "")
+    PASSWORD = os.getenv("WQ_PASSWORD", "")
+    
+    if not USERNAME or not PASSWORD:
+        print("错误: 请在 .env 文件中配置 WQ_USERNAME 和 WQ_PASSWORD")
+        exit(1)
     
     result = build_factor_pipeline(
-        api_token=API_TOKEN,
+        username=USERNAME,
+        password=PASSWORD,
         dataset_id='fundamental6',
         max_factors=100,
         strategy_mode=1

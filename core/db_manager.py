@@ -97,12 +97,19 @@ class AlphaDatabase:
                         turnover REAL,
                         returns REAL,
                         drawdown REAL,
+                        self_corr REAL DEFAULT -1,
                         status TEXT DEFAULT 'OK',
                         test_time TEXT NOT NULL
                     )
                 """)
                 # 为 expression 列创建索引，加速查询
                 conn.execute("CREATE INDEX IF NOT EXISTS idx_expression ON tested_expressions(expression)")
+            else:
+                # 如果表已存在，检查并添加 self_corr 字段
+                cursor = conn.execute("PRAGMA table_info(tested_expressions)")
+                existing_columns = [row[1] for row in cursor.fetchall()]
+                if 'self_corr' not in existing_columns:
+                    conn.execute("ALTER TABLE tested_expressions ADD COLUMN self_corr REAL DEFAULT -1")
             
             conn.commit()
     
@@ -374,6 +381,38 @@ class AlphaDatabase:
             logger.error(f"Failed to mark submit failed: {e}")
             return True  # 出错时保守处理，保留候选池
 
+    def get_failed_expressions(self, min_fail_count: int = 1, limit: int = 100) -> List[Dict]:
+        """获取提交失败的表达式及其失败原因
+        
+        Args:
+            min_fail_count: 最少失败次数，默认1
+            limit: 返回数量限制，默认100
+        
+        Returns:
+            List[Dict]: 失败表达式列表，每项包含 expression, fail_count, fail_reason
+        """
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.execute("""
+                    SELECT expression, submit_fail_count, submit_fail_reason
+                    FROM alphas
+                    WHERE submit_fail_count >= ?
+                    ORDER BY submit_fail_count DESC
+                    LIMIT ?
+                """, (min_fail_count, limit))
+                
+                results = []
+                for row in cursor.fetchall():
+                    results.append({
+                        'expression': row[0],
+                        'fail_count': row[1],
+                        'fail_reason': row[2]
+                    })
+                return results
+        except Exception as e:
+            logger.error(f"Failed to get failed expressions: {e}")
+            return []
+    
     def reset_submit_failed(self, alpha_id: str) -> bool:
         """重置Alpha的提交失败计数，使其重新进入候选池
         
@@ -410,16 +449,17 @@ class AlphaDatabase:
     def add_tested_expression(self, expression: str, alpha_id: str = None,
                               sharpe: float = None, fitness: float = None,
                               turnover: float = None, returns: float = None,
-                              drawdown: float = None, status: str = 'OK') -> bool:
+                              drawdown: float = None, self_corr: float = -1,
+                              status: str = 'OK') -> bool:
         """添加已回测的表达式"""
         try:
             with self._get_connection() as conn:
                 now = datetime.now().isoformat()
                 conn.execute("""
                     INSERT OR IGNORE INTO tested_expressions 
-                    (expression, alpha_id, sharpe, fitness, turnover, returns, drawdown, status, test_time)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """, (expression, alpha_id, sharpe, fitness, turnover, returns, drawdown, status, now))
+                    (expression, alpha_id, sharpe, fitness, turnover, returns, drawdown, self_corr, status, test_time)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (expression, alpha_id, sharpe, fitness, turnover, returns, drawdown, self_corr, status, now))
                 conn.commit()
             return True
         except Exception as e:
@@ -431,6 +471,20 @@ class AlphaDatabase:
         with self._get_connection() as conn:
             cursor = conn.execute("SELECT COUNT(*) FROM tested_expressions")
             return cursor.fetchone()[0]
+
+    def update_self_corr(self, expression: str, self_corr: float) -> bool:
+        """更新表达式的自相关系数"""
+        try:
+            with self._get_connection() as conn:
+                conn.execute("""
+                    UPDATE tested_expressions SET self_corr = ?
+                    WHERE expression = ?
+                """, (self_corr, expression))
+                conn.commit()
+            return True
+        except Exception as e:
+            logger.error(f"Failed to update self_corr: {e}")
+            return False
 
     def get_tested_expressions(self) -> Set[str]:
         """获取所有已回测的表达式集合（用于批量回测过滤）"""

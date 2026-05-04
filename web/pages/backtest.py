@@ -78,18 +78,22 @@ def page_backtest():
         completed = current_task.get("completed", 0)
         total = current_task.get("total", 1)
         failed = current_task.get("failed", 0)
+        official_progress = current_task.get("official_progress")  # 官方单个进度
         
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("完成", completed)
         with col2:
             st.metric("失败", failed)
         with col3:
             st.metric("总计", total)
-        with col4:
-            st.metric("进度", f"{progress*100:.1f}%")
         
-        st.progress(progress, text=f"进度: {completed}/{total}")
+        # 显示总体进度条
+        st.progress(progress, text=f"总体进度: {completed}/{total} ({progress*100:.1f}%)")
+        
+        # 如果有官方进度（单个alpha的进度），显示当前任务进度
+        if official_progress is not None and official_progress < 1.0:
+            st.caption(f"🔄 当前任务官方进度: {official_progress*100:.0f}%")
         
         # 停止按钮
         col_btn1, col_btn2, col_btn3 = st.columns([2, 1, 2])

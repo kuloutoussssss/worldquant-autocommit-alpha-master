@@ -108,7 +108,8 @@ class BrainAPIClient:
                    decay: int = 30, neutralization: str = "SECTOR",
                    truncation: float = 0.08, delay: int = 1,
                    region: str = "USA",
-                   test_period: str = "P2Y0M") -> Optional[Dict]:
+                   test_period: str = "P2Y0M",
+                   max_trade: str = "OFF") -> Optional[Dict]:
         """回测单个 Alpha"""
         if not self.ensure_session():
             return {"status": "ERROR", "error": "Authentication failed"}
@@ -125,6 +126,7 @@ class BrainAPIClient:
                 "neutralization": neutralization,
                 "truncation": truncation,
                 "testPeriod": test_period,
+                "maxTrade": max_trade,
                 "nanHandling": "OFF",
                 "unitHandling": "VERIFY",
                 "pasteurization": "ON",
@@ -175,6 +177,11 @@ class BrainAPIClient:
         Args:
             location: simulation URL
             max_retries: 最大重试次数，默认60次（约10分钟）
+            
+        Returns:
+            - 运行中: {"status": "OK", "progress": 0.1}
+            - 完成: {"status": "OK", "data": {...}}
+            - 错误: {"status": "ERROR", "error": "..."}
         """
         if not self.ensure_session():
             return {"status": "ERROR", "error": "Authentication failed"}
@@ -205,10 +212,22 @@ class BrainAPIClient:
                 if response.status_code != 200:
                     return {"status": "ERROR", "error": f"HTTP {response.status_code}"}
                 
-                # 检查是否完成
+                data = response.json()
+                
+                # 官方 progress 字段（0.0 - 1.0）
+                if "progress" in data:
+                    progress = data.get("progress", 0)
+                    # 官方 API 完成时返回 progress=1 或返回 status
+                    if progress >= 1.0 or data.get("status") in ["COMPLETE", "ERROR"]:
+                        if data.get("status") == "ERROR":
+                            return {"status": "ERROR", "error": data.get("message", "Simulation failed")}
+                        return {"status": "OK", "data": data}
+                    # 运行中，返回进度
+                    return {"status": "OK", "progress": progress}
+                
+                # 兼容旧格式：使用 Retry-After header
                 retry_after = response.headers.get("Retry-After", "0")
                 if not retry_after or retry_after == "0":
-                    data = response.json()
                     if data.get("status") == "ERROR":
                         return {"status": "ERROR", "error": data.get("message", "Simulation failed")}
                     return {"status": "OK", "data": data}
@@ -375,6 +394,60 @@ class BrainAPIClient:
             logger.error(f"Failed to get datafields: {e}")
         
         return all_fields
+
+    def set_alpha_properties(
+        self,
+        alpha_id: str,
+        name: str = None,
+        color: str = None,
+        tags: List[str] = None,
+        selection_desc: str = None,
+        combo_desc: str = None
+    ) -> Dict:
+        """
+        设置Alpha的属性（标签、名称等）
+
+        Args:
+            alpha_id: Alpha ID
+            name: Alpha名称
+            color: 颜色（十六进制）
+            tags: 标签列表
+            selection_desc: Selection描述
+            combo_desc: Combo描述
+
+        Returns:
+            Dict: API响应
+        """
+        if not self.ensure_session():
+            return {"status": "ERROR", "error": "Authentication failed"}
+
+        params = {
+            "color": color,
+            "name": name,
+            "tags": tags or [],
+            "category": None,
+            "regular": {"description": None},
+            "combo": {"description": combo_desc},
+            "selection": {"description": selection_desc},
+        }
+
+        try:
+            response = self.session.patch(
+                f"{BASE_URL}/alphas/{alpha_id}",
+                json=params,
+                timeout=DEFAULT_TIMEOUT
+            )
+
+            if response.status_code == 200:
+                logger.info(f"已设置Alpha属性: {alpha_id}, tags={tags}")
+                return {"status": "OK", "alpha_id": alpha_id}
+            else:
+                logger.error(f"设置Alpha属性失败: {response.status_code} - {response.text}")
+                return {"status": "ERROR", "error": response.text}
+
+        except Exception as e:
+            logger.error(f"设置Alpha属性异常: {e}")
+            return {"status": "ERROR", "error": str(e)}
 
 
 class AsyncBrainAPIClient:

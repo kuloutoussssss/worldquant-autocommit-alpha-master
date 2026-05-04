@@ -103,12 +103,11 @@ def page_alpha_list():
                         st.rerun()
             with col3:
                 if st.button("🗑️ 清空全部", type="secondary", key="clear_alpha_btn"):
-                    if st.confirm("确定要清空全部 Alpha 吗？"):
-                        from web.utils.helpers import save_to_test_alphas
-                        save_to_test_alphas([])
-                        st.success("已清空全部 Alpha")
-                        get_alpha_stats.clear()
-                        st.rerun()
+                    from web.utils.helpers import save_to_test_alphas
+                    save_to_test_alphas([])
+                    st.success("已清空全部 Alpha")
+                    get_alpha_stats.clear()
+                    st.rerun()
             
             st.divider()
             

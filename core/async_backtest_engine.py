@@ -17,11 +17,12 @@ from .api_client import BrainAPIClient
 from .db_manager import get_database
 from .logger import logger
 
-# 并发配置 - 安全设置
-DEFAULT_CONCURRENCY = 1  # 默认并发数（安全值：1）
-MAX_RETRIES = 3  # 最大重试次数
-RETRY_DELAY = 30  # 429 重试延迟（秒）
-REQUEST_DELAY = 3.0  # 请求间隔（秒），确保API不超限
+# 并发配置 - 安全设置（基于官方 API 测试）
+DEFAULT_CONCURRENCY = 3  # 默认并发数（官方测试推荐 3）
+MAX_RETRIES = 5  # 最大重试次数
+RETRY_DELAY = 30  # 429 重试初始延迟（秒）
+RETRY_MULTIPLIER = 2.0  # 退避倍数：30s → 60s → 120s → 240s
+REQUEST_DELAY = 2.0  # 请求间隔（秒）
 
 
 @dataclass
@@ -102,8 +103,13 @@ class AsyncBacktestEngine:
         except Exception as e:
             logger.error(f"Failed to remove from file: {e}")
     
-    async def test_single(self, alpha: Dict) -> BacktestResult:
-        """异步测试单个 Alpha"""
+    async def test_single(self, alpha: Dict, progress_callback: Optional[Callable] = None) -> BacktestResult:
+        """异步测试单个 Alpha
+        
+        Args:
+            alpha: Alpha 配置字典
+            progress_callback: 进度回调函数，接收 (progress: float) 参数
+        """
         expression = alpha.get('expression', '')
         universe = alpha.get('universe', 'TOP3000')
         decay = alpha.get('decay', 30)
@@ -146,14 +152,56 @@ class AsyncBacktestEngine:
             
             location = api_result.get('location', '')
             
-            # 2. 轮询获取结果（使用线程池避免阻塞事件循环）
-            api_result = await loop.run_in_executor(
+            # 2. 轮询获取结果 - 支持官方 progress 字段
+            max_polls = 120  # 最多轮询 120 次（约 10 分钟）
+            poll_count = 0
+            
+            while poll_count < max_polls:
+                api_result = await loop.run_in_executor(
+                    None,
+                    lambda: self.client.get_simulation_result(location)
+                )
+                
+                if not api_result:
+                    poll_count += 1
+                    await asyncio.sleep(2)
+                    continue
+                
+                # 官方 progress 字段
+                if "progress" in api_result:
+                    progress = api_result.get("progress", 0)
+                    if progress_callback:
+                        progress_callback(progress)
+                    
+                    if progress >= 1.0:
+                        # 完成，提取数据
+                        break
+                    else:
+                        # 运行中，继续轮询
+                        poll_count += 1
+                        await asyncio.sleep(2)
+                        continue
+                
+                # 旧格式兼容：直接返回 data
+                if api_result.get('status') == 'OK' and 'data' in api_result:
+                    break
+                elif api_result.get('status') == 'ERROR':
+                    result.status = "ERROR"
+                    result.error = api_result.get('error', 'Unknown error')
+                    result.is_429 = "429" in str(result.error) or "LIMIT_EXCEEDED" in str(result.error)
+                    return result
+                
+                poll_count += 1
+                await asyncio.sleep(2)
+            
+            # 3. 获取最终结果
+            final_result = await loop.run_in_executor(
                 None,
-                lambda: self.client.get_simulation_result(location)
+                lambda: self.client.get_simulation_result(location, max_retries=1)
             )
             
-            if api_result and api_result.get('status') == 'OK':
-                data = api_result.get('data', {})
+            if final_result and final_result.get('status') == 'OK':
+                data = final_result.get('data', {})
                 result.alpha_id = data.get('alphaId', '')
                 result.sharpe = float(data.get('sharpe', 0))
                 result.fitness = float(data.get('fitness', 0))
@@ -161,14 +209,14 @@ class AsyncBacktestEngine:
                 result.returns = float(data.get('returns', 0))
                 result.drawdown = float(data.get('drawdown', 0))
                 result.status = "OK"
-            elif api_result and api_result.get('status') == 'ERROR':
-                error = api_result.get('error', 'Unknown error')
+            elif final_result and final_result.get('status') == 'ERROR':
+                error = final_result.get('error', 'Unknown error')
                 result.status = "ERROR"
                 result.error = error
                 result.is_429 = "429" in str(error) or "LIMIT_EXCEEDED" in str(error)
             else:
                 result.status = "ERROR"
-                result.error = "No response"
+                result.error = "Timeout waiting for result"
                 
         except Exception as e:
             result.status = "ERROR"
@@ -189,27 +237,40 @@ class AsyncBacktestEngine:
         expression = alpha.get('expression', '')
         
         for retry in range(MAX_RETRIES):
-            result = await self.test_single(alpha)
+            # 使用进度回调
+            result = await self.test_single(alpha, progress_callback=self.progress_callback)
             
             if result.status == "OK":
                 async with self._lock:
                     results.append(result)
                     completed_ids.add(expression)
                 self.completed += 1
-                
+
+                # 保存到数据库
+                self.db.add_tested_expression(
+                    expression=result.expression,
+                    alpha_id=result.alpha_id,
+                    sharpe=result.sharpe,
+                    fitness=result.fitness,
+                    turnover=result.turnover,
+                    returns=result.returns,
+                    drawdown=result.drawdown,
+                    status=result.status
+                )
+
                 # 从输入文件删除已回测的表达式
                 if self.remove_tested and self.input_file:
                     self.remove_from_file(expression, self.input_file)
-                
+
                 self._update_progress()
                 if self.result_callback:
                     self.result_callback(result)
                 return
             
             if result.is_429 and retry < MAX_RETRIES - 1:
-                # 429 错误，等待后重试
-                wait_time = RETRY_DELAY * (retry + 1)
-                logger.warning(f"429限流! 等待 {wait_time}秒后重试 ({retry+1}/{MAX_RETRIES})...")
+                # 429 错误，指数退避等待
+                wait_time = RETRY_DELAY * (RETRY_MULTIPLIER ** retry)
+                logger.warning(f"429限流! 等待 {wait_time:.0f}秒后重试 ({retry+1}/{MAX_RETRIES})...")
                 await asyncio.sleep(wait_time)
                 continue
             
@@ -265,16 +326,24 @@ class AsyncBacktestEngine:
             # 请求间隔
             await asyncio.sleep(REQUEST_DELAY)
     
-    def _update_progress(self):
-        """更新进度"""
+    def _update_progress(self, official_progress: float = None):
+        """更新进度
+        
+        Args:
+            official_progress: 官方 API 返回的进度 (0.0 - 1.0)
+        """
         if self.progress_callback:
             total = len(self._results) + self.completed + self.failed + self.skipped_429
-            self.progress_callback({
+            progress_data = {
                 'total': total,
                 'completed': self.completed,
                 'failed': self.failed,
                 'skipped_429': self.skipped_429
-            })
+            }
+            # 如果有官方进度，添加进去
+            if official_progress is not None:
+                progress_data['official_progress'] = official_progress
+            self.progress_callback(progress_data)
     
     async def run_batch_async(
         self,

@@ -181,12 +181,25 @@ def run_backtest_task(task_id: str, untested_data: list, params: dict, resume: b
             update_task(task_id, progress=progress, completed=_success_count, failed=_fail_count)
             _last_update_time = current_time
     
-    def progress_callback(progress):
-        """进度回调"""
+    def progress_callback(progress_data):
+        """进度回调 - 同时更新官方进度"""
         from web.utils.task_progress import get_progress_manager
         progress_mgr = get_progress_manager()
-        total = len(untested_data)
-        progress_mgr.mark_processed(task_id, "", True)  # 更新进度
+        
+        # 更新进度（标记有活动）
+        progress_mgr.mark_processed(task_id, "", True)
+        
+        # 如果有官方进度，更新任务详情
+        if isinstance(progress_data, dict):
+            official_progress = progress_data.get('official_progress')
+            if official_progress is not None:
+                # 更新任务文件中的官方进度
+                tasks = load_tasks()
+                for t in tasks:
+                    if t["id"] == task_id:
+                        t["official_progress"] = official_progress
+                        break
+                save_tasks(tasks)
     
     try:
         if ASYNC_AVAILABLE:
@@ -269,8 +282,8 @@ async def _run_async_backtest(task_id, untested_data, params, input_file,
         else:
             logger.warning(f"[{task_id}] Unknown item format: {type(item)}")
     
-    # 并发数 - 使用安全默认值
-    concurrency = params.get('concurrency', 1)  # 安全值：1
+    # 并发数 - 默认使用2提升效率
+    concurrency = params.get('concurrency', 3)  # 默认并发数：3（与命令行一致）
     request_delay = params.get('request_delay', 3.0)  # 安全间隔：3秒
     logger.info(f"[{task_id}] 启动异步回测，并发数: {concurrency}, 间隔: {request_delay}s")
     

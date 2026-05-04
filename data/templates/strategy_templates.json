@@ -1,0 +1,303 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-04-02T01:13:15.572871",
+  "generator": "Unified Template Generator",
+  "description": "统一的策略模板 - 结合LLM生成和配置文件驱动",
+  "sources": [
+    "LLM生成",
+    "配置文件驱动"
+  ],
+  "basic_strategies": {
+    "description": "基础策略（单因子策略）",
+    "categories": {
+      "1_日内策略": {
+        "description": "捕捉日内价格波动和趋势",
+        "strategies": [
+          {
+            "name": "日内收益率",
+            "expression": "group_rank((close - open)/open, subindustry)",
+            "description": "当日开盘到收盘的收益率"
+          },
+          {
+            "name": "隔夜收益率",
+            "expression": "group_rank((open - delay(close, 1))/delay(close, 1), subindustry)",
+            "description": "隔夜时段的收益率"
+          },
+          {
+            "name": "高低价差异",
+            "expression": "group_rank((high - low)/open, subindustry)",
+            "description": "当日最高价与最低价的差异"
+          },
+          {
+            "name": "Momentum Strategy from Remote Data_1",
+            "expression": "rank(ts_mean(returns, 10))",
+            "description": "动量策略 - 基于价格趋势和动量指标 - 模式1",
+            "source": "llm_selected"
+          },
+          {
+            "name": "Momentum Strategy from Remote Data_2",
+            "expression": "rank(ts_corr(close, ts_sum(volume, 20), 20))",
+            "description": "动量策略 - 基于价格趋势和动量指标 - 模式2",
+            "source": "llm_selected"
+          },
+          {
+            "name": "Momentum Strategy from Remote Data_3",
+            "expression": "group_neutralize(rank(ts_sum(returns, 20)), bucket(rank(cap), range='0.1,1,0.1'))",
+            "description": "动量策略 - 基于价格趋势和动量指标 - 模式3",
+            "source": "llm_selected"
+          }
+        ]
+      },
+      "2_波动率策略": {
+        "description": "基于价格波动率的策略",
+        "strategies": [
+          {
+            "name": "波动率偏度",
+            "expression_template": "power(ts_std_dev(abs({field}), 30), 2) - power(ts_std_dev({field}, 30), 2)",
+            "description": "衡量绝对波动率与波动率的差异"
+          },
+          {
+            "name": "波动率动态调整",
+            "expression_template": "group_rank(std({field}, 20)/mean({field}, 20) * (1/cap), subindustry)",
+            "description": "波动率与均值比率的动态调整"
+          }
+        ]
+      },
+      "3_成交量策略": {
+        "description": "基于成交量和流动性",
+        "applicable_fields": [
+          "volume",
+          "turnover"
+        ],
+        "strategies": [
+          {
+            "name": "成交量异常",
+            "expression": "group_rank((volume/sharesout - mean(volume/sharesout, 20))/std(volume/sharesout, 20), subindustry)",
+            "description": "成交量相对于历史均值的异常"
+          },
+          {
+            "name": "成交量趋势",
+            "expression": "ts_corr(volume/sharesout, abs(returns), 10)",
+            "description": "成交量与收益率的相关性"
+          }
+        ]
+      },
+      "4_市场微观结构": {
+        "description": "基于订单流和微观结构",
+        "strategies": [
+          {
+            "name": "小单买卖压力",
+            "expression_template": "group_neutralize(power(rank({field} - group_mean({field}, 1, subindustry)), 3), bucket(rank(cap), range='0,1,0.1'))",
+            "description": "行业内小单买卖压力"
+          },
+          {
+            "name": "流动性压力",
+            "expression_template": "group_rank(correlation({field}, volume/sharesout, 20), subindustry)",
+            "description": "流动性压力指标"
+          }
+        ]
+      },
+      "5_条件触发策略": {
+        "description": "基于市场状态条件的策略",
+        "strategies": [
+          {
+            "name": "条件触发",
+            "expression_template": "trade_when(ts_rank(ts_std_dev(returns, 10), 252) < 0.9, {field}, -1)",
+            "description": "在市场稳定时触发交易"
+          },
+          {
+            "name": "市场状态过滤",
+            "expression_template": "trade_when(volume > mean(volume, 20), {field}, -1)",
+            "description": "根据成交量过滤市场状态"
+          },
+          {
+            "name": "Reversal Strategy from Remote Data_1",
+            "expression": "rank(ts_mean(close, 20) - close)",
+            "description": "反转策略 - 基于价格反转和均值回归 - 模式1",
+            "source": "llm_selected"
+          },
+          {
+            "name": "Reversal Strategy from Remote Data_2",
+            "expression": "rank(-1 * (close - ts_mean(close, 5)))",
+            "description": "反转策略 - 基于价格反转和均值回归 - 模式2",
+            "source": "llm_selected"
+          },
+          {
+            "name": "Reversal Strategy from Remote Data_3",
+            "expression": "group_neutralize(rank(-1 * returns), bucket(rank(cap), range='0.1,1,0.1'))",
+            "description": "反转策略 - 基于价格反转和均值回归 - 模式3",
+            "source": "llm_selected"
+          }
+        ]
+      },
+      "6_精选策略": {
+        "description": "精选的高质量策略",
+        "field_specific": {
+          "sales": [
+            {
+              "name": "基本面波动率异常",
+              "expression": "group_rank(std(sales, 15)/mean(sales, 15) * (1/cap), subindustry)",
+              "description": "销售收入的波动率异常"
+            }
+          ],
+          "operating_income": [
+            {
+              "name": "利润质量分析",
+              "expression": "group_neutralize(rank(operating_income/group_mean(operating_income, 1, subindustry)), bucket(rank(cap), range='0.1,1,0.1'))",
+              "description": "利润质量指标"
+            }
+          ],
+          "assets": [
+            {
+              "name": "资产效率分析",
+              "expression": "regression_neut(assets/sharesout, returns)",
+              "description": "资产效率分析"
+            }
+          ],
+          "earnings_estimate": [
+            {
+              "name": "预期调整动量",
+              "expression": "group_rank(ts_rank(earnings_estimate, 20) - ts_rank(delay(earnings_estimate, 1), 20), subindustry)",
+              "description": "盈利预期调整的动量"
+            }
+          ],
+          "target_price": [
+            {
+              "name": "目标价预期",
+              "expression": "group_rank((target_price - close)/close, subindustry) * ts_corr(volume, abs(returns), 10)",
+              "description": "目标价预期与成交量相关"
+            }
+          ],
+          "analyst_rating": [
+            {
+              "name": "评级调整信号",
+              "expression": "if_else(rank(analyst_rating) > 0.7, group_neutralize(analyst_rating, industry), -1 * group_neutralize(analyst_rating, industry))",
+              "description": "分析师评级调整信号"
+            }
+          ],
+          "close": [
+            {
+              "name": "日内动量反转",
+              "expression": "group_rank((close - open)/open, subindustry) * (1 - ts_rank(abs(returns), 5))",
+              "description": "日内动量反转策略"
+            },
+            {
+              "name": "流动性压力",
+              "expression": "trade_when(volume > mean(volume, 20), group_rank(correlation(close, volume/sharesout, 10), subindustry), 0)",
+              "description": "基于流动性的压力指标"
+            }
+          ],
+          "high": [
+            {
+              "name": "波动率突破",
+              "expression": "ts_rank((high - low)/open, 252) > 0.8 ? rank((high - low)/open) : 0",
+              "description": "波动率突破策略"
+            }
+          ]
+        },
+        "strategies": [
+          {
+            "name": "Value Strategy from Remote Data_1",
+            "expression": "rank(-1 * cap)",
+            "description": "价值策略 - 基于基本面价值指标 - 模式1",
+            "source": "llm_selected"
+          },
+          {
+            "name": "Value Strategy from Remote Data_2",
+            "expression": "group_neutralize(rank(-1 * cap), bucket(rank(cap), range='0.1,1,0.1'))",
+            "description": "价值策略 - 基于基本面价值指标 - 模式2",
+            "source": "llm_selected"
+          },
+          {
+            "name": "Value Strategy from Remote Data_3",
+            "expression": "rank(-1 * vwap)",
+            "description": "价值策略 - 基于基本面价值指标 - 模式3",
+            "source": "llm_selected"
+          }
+        ]
+      }
+    }
+  },
+  "multi_factor_strategies": {
+    "description": "多因子组合策略",
+    "categories": {
+      "1_回归中性化": {
+        "description": "使用回归方法控制因子暴露",
+        "strategies": [
+          {
+            "name": "双重回归中性",
+            "expression_template": "regression_neut(vector_neut({field1}, {field2}), abs(ts_mean(returns, 252)/ts_std_dev(returns, 252)))",
+            "description": "双重回归控制因子暴露"
+          },
+          {
+            "name": "多重回归",
+            "expression_template": "regression_neut(regression_neut({field1}, {field2}), ts_std_dev(returns, 30))",
+            "description": "多重回归控制"
+          }
+        ]
+      },
+      "2_条件组合": {
+        "description": "基于条件的因子组合",
+        "strategies": [
+          {
+            "name": "条件选择",
+            "expression_template": "if_else(rank({field1}) > 0.5, {field2}, -1 * {field2})",
+            "description": "基于排名的条件选择"
+          },
+          {
+            "name": "分组组合",
+            "expression_template": "group_neutralize({field1} * {field2}, bucket(rank(cap), range='0.1,1,0.1'))",
+            "description": "分组中性化组合"
+          }
+        ]
+      },
+      "3_复杂信号": {
+        "description": "复杂的信号组合逻辑",
+        "strategies": [
+          {
+            "name": "信号强度",
+            "expression_template": "power(rank(group_neutralize(-ts_decay_exp_window(ts_sum(if_else({field1}-group_mean({field1},1,industry)-0.02>0,1,0)*ts_corr({field2},cap,5),3),50),industry)),2)",
+            "description": "信号强度计算"
+          },
+          {
+            "name": "市场状态",
+            "expression_template": "trade_when(ts_rank(ts_std_dev(returns,10),252)<0.9, {field1} * {field2}, -1)",
+            "description": "根据市场状态组合信号"
+          }
+        ]
+      },
+      "4_精选组合策略": {
+        "description": "精选的多因子组合策略",
+        "strategies": [
+          {
+            "name": "盈利预期组合",
+            "expression": "regression_neut(rank(operating_income), rank(earnings_estimate))",
+            "description": "盈利预期组合 - 实际盈利与市场预期的相对关系",
+            "required_fields": [
+              "operating_income",
+              "earnings_estimate"
+            ]
+          },
+          {
+            "name": "基本面技术面组合",
+            "expression": "if_else(rank(sales) > 0.5, group_rank((close - open)/open, subindustry), -1 * group_rank((close - open)/open, subindustry))",
+            "description": "基本面筛选+技术面择时",
+            "required_fields": [
+              "sales",
+              "close"
+            ]
+          },
+          {
+            "name": "成长估值组合",
+            "expression": "group_neutralize(sales/enterprise_value, bucket(rank(cap), range='0.1,1,0.1'))",
+            "description": "PEG指标逻辑 - 成长估值组合",
+            "required_fields": [
+              "sales",
+              "enterprise_value"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

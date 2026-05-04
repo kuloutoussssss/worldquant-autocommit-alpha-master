@@ -1,0 +1,10 @@
+{
+  "workflow": {
+    "num_to_submit": 2,
+    "delay": 10,
+    "min_sharpe": 1.25,
+    "min_fitness": 1.0,
+    "max_turnover": 0.7,
+    "input_file": "data/alphas/to_test.txt"
+  }
+}

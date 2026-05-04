@@ -1,0 +1,3782 @@
+[
+  {
+    "id": "backtest_1776826249286",
+    "name": "Backtest 28350 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.0025749559082892414,
+    "completed": 0,
+    "total": 28350,
+    "failed": 73,
+    "started_at": "2026-04-22T10:50:49.287744",
+    "finished_at": "2026-04-22T10:59:37.206970",
+    "error": null,
+    "details": [
+      {
+        "time": "10:50:57",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:50:57",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:50:59",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:07",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:07",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:13",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:16",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:25",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:28",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:28",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:33",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:39",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:48",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:51:49",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:01",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:04",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:06",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:07",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:19",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:19",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:23",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:26",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:39",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:47",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:47",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:51",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:52:57",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:53:03",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:53:13",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:53:22",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:53:24",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:53:30",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:53:42",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:53:44",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:54:05",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:54:29",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:54:43",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:54:46",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:54:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:08",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:14",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:23",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:34",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:45",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:55",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:55:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:56:14",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:56:23",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:56:25",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:56:31",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:56:40",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:56:43",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:56:51",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:09",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:29",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:33",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:48",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:52",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:57:54",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:58:11",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:58:22",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:58:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:58:31",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:58:52",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:59:37",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:59:38",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true
+    }
+  },
+  {
+    "id": "backtest_1776826814829",
+    "name": "Backtest 28349 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.0084306324738086,
+    "completed": 0,
+    "total": 28349,
+    "failed": 239,
+    "started_at": "2026-04-22T11:00:14.829789",
+    "finished_at": "2026-04-22T12:39:57.530753",
+    "error": null,
+    "details": [
+      {
+        "time": "11:47:47",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:47:55",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:48:06",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:48:21",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:48:30",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:48:40",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:48:49",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:48:59",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:49:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:49:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:55:05",
+        "message": "❌ 失败: Simulation timeout: exceeded maximum retries"
+      },
+      {
+        "time": "11:55:57",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:56:33",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:56:43",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "11:57:03",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:01:54",
+        "message": "❌ 失败: 429 after 3 retries"
+      },
+      {
+        "time": "12:03:41",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:03:51",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:04:05",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:04:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:06:09",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:06:34",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:06:43",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:06:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:07:07",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:07:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:07:41",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:07:46",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:08:53",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:09:02",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:09:12",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:09:21",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:09:35",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:09:55",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:10:05",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:10:20",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:10:50",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:11:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:11:26",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:11:35",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:11:45",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:12:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:12:52",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:13:23",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:13:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:13:51",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:14:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:14:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:14:51",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:15:05",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:15:20",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:15:30",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:16:10",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:16:30",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:16:50",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:17:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:17:25",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:17:34",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:17:50",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:02",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:26",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:37",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:46",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:55",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:20:04",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:20:29",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:20:38",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:20:48",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:21:18",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:21:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"r\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:21:52",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:22:06",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:22:21",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:27:42",
+        "message": "❌ 失败: Simulation timeout: exceeded maximum retries"
+      },
+      {
+        "time": "12:31:56",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:32:05",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:32:34",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:32:55",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:33:04",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:33:26",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:33:46",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:34:39",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:34:48",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:34:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:35:07",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:35:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:35:26",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:35:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:36:44",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:37:20",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:37:30",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:37:57",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:38:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:38:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:38:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:39:01",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:39:21",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:39:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:39:57",
+        "message": "❌ 失败: Attempted to use unknown variable \"a\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776828912109",
+    "name": "Backtest 28350 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.0013756613756613757,
+    "completed": 20,
+    "total": 28350,
+    "failed": 19,
+    "started_at": "2026-04-22T11:35:12.110945",
+    "finished_at": "2026-04-22T12:40:10.219845",
+    "error": null,
+    "details": [
+      {
+        "time": "11:39:12",
+        "message": "✅ 成功: rank(ts_mean(volume, 15) / ts_..."
+      },
+      {
+        "time": "11:42:32",
+        "message": "✅ 成功: rank(ts_mean(volume, 3) / ts_d..."
+      },
+      {
+        "time": "11:43:56",
+        "message": "✅ 成功: rank(ts_mean(volume, 3) / ts_d..."
+      },
+      {
+        "time": "11:45:55",
+        "message": "✅ 成功: rank(ts_mean(volume, 5) / ts_d..."
+      },
+      {
+        "time": "11:47:50",
+        "message": "✅ 成功: rank(ts_mean(volume, 15) / ts_..."
+      },
+      {
+        "time": "11:50:39",
+        "message": "✅ 成功: rank(ts_mean(volume, 1) / ts_d..."
+      },
+      {
+        "time": "11:53:11",
+        "message": "✅ 成功: rank(ts_delta(vwap, 5) * ts_de..."
+      },
+      {
+        "time": "11:58:51",
+        "message": "✅ 成功: rank(ts_mean(volume, 15) / ts_..."
+      },
+      {
+        "time": "12:01:16",
+        "message": "✅ 成功: rank(ts_mean(volume, 20) / ts_..."
+      },
+      {
+        "time": "12:02:54",
+        "message": "✅ 成功: rank(ts_delta(close, 5) * ts_d..."
+      },
+      {
+        "time": "12:05:34",
+        "message": "✅ 成功: rank(ts_delta(vwap, 2) * ts_de..."
+      },
+      {
+        "time": "12:07:47",
+        "message": "✅ 成功: rank(ts_delta(high, 2) * ts_de..."
+      },
+      {
+        "time": "12:09:47",
+        "message": "✅ 成功: rank(ts_mean(volume, 2) / ts_d..."
+      },
+      {
+        "time": "12:10:02",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:10:37",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:10:52",
+        "message": "❌ 失败: Attempted to use unknown variable \"vwp\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:11:02",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:14:36",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "12:14:56",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:10",
+        "message": "✅ 成功: rank(ts_rank(adv20, 20) - ts_r..."
+      },
+      {
+        "time": "12:19:41",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_120d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:21:19",
+        "message": "✅ 成功: rank(ts_rank(volume, 15))..."
+      },
+      {
+        "time": "12:21:28",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:21:43",
+        "message": "❌ 失败: Attempted to use unknown variable \"bid\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:25:09",
+        "message": "✅ 成功: rank(ts_rank(low, 40))..."
+      },
+      {
+        "time": "12:25:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_120d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:25:49",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_120d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:25:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"ask\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:26:08",
+        "message": "❌ 失败: Attempted to use unknown variable \"vwp\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:26:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"bid\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:28:48",
+        "message": "✅ 成功: rank(ts_rank(vwap, 20) - ts_ra..."
+      },
+      {
+        "time": "12:28:57",
+        "message": "❌ 失败: Attempted to use unknown variable \"bid\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:31:35",
+        "message": "✅ 成功: rank(ts_rank(open, 30) - ts_ra..."
+      },
+      {
+        "time": "12:31:45",
+        "message": "❌ 失败: Attempted to use unknown variable \"turnover\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:32:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_120d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:32:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv5\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:37:03",
+        "message": "❌ 失败: 429 after 3 retries"
+      },
+      {
+        "time": "12:38:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:40:10",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776828931787",
+    "name": "Backtest 28350 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.001128747795414462,
+    "completed": 15,
+    "total": 28350,
+    "failed": 17,
+    "started_at": "2026-04-22T11:35:31.788851",
+    "finished_at": "2026-04-22T12:40:01.422291",
+    "error": null,
+    "details": [
+      {
+        "time": "11:38:03",
+        "message": "✅ 成功: rank(ts_mean(volume, 15) / ts_..."
+      },
+      {
+        "time": "11:40:24",
+        "message": "✅ 成功: rank(ts_mean(volume, 3) / ts_d..."
+      },
+      {
+        "time": "11:41:52",
+        "message": "✅ 成功: rank(ts_mean(volume, 3) / ts_d..."
+      },
+      {
+        "time": "11:43:43",
+        "message": "✅ 成功: rank(ts_mean(volume, 5) / ts_d..."
+      },
+      {
+        "time": "11:47:30",
+        "message": "✅ 成功: rank(ts_mean(volume, 15) / ts_..."
+      },
+      {
+        "time": "11:53:00",
+        "message": "❌ 失败: Simulation timeout: exceeded maximum retries"
+      },
+      {
+        "time": "11:55:37",
+        "message": "✅ 成功: rank(ts_delta(vwap, 5) * ts_de..."
+      },
+      {
+        "time": "12:00:26",
+        "message": "❌ 失败: 429 after 3 retries"
+      },
+      {
+        "time": "12:05:33",
+        "message": "✅ 成功: rank(ts_mean(volume, 20) / ts_..."
+      },
+      {
+        "time": "12:08:26",
+        "message": "✅ 成功: rank(ts_delta(close, 5) * ts_d..."
+      },
+      {
+        "time": "12:12:59",
+        "message": "✅ 成功: rank(ts_delta(vwap, 2) * ts_de..."
+      },
+      {
+        "time": "12:14:27",
+        "message": "✅ 成功: rank(ts_delta(high, 2) * ts_de..."
+      },
+      {
+        "time": "12:17:12",
+        "message": "✅ 成功: rank(ts_mean(volume, 2) / ts_d..."
+      },
+      {
+        "time": "12:18:19",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:19:46",
+        "message": "❌ 失败: Attempted to use unknown variable \"vwp\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:20:06",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:22:22",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "12:22:37",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:24:06",
+        "message": "✅ 成功: rank(ts_rank(adv20, 20) - ts_r..."
+      },
+      {
+        "time": "12:24:16",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_120d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:26:40",
+        "message": "✅ 成功: rank(ts_rank(volume, 15))..."
+      },
+      {
+        "time": "12:26:50",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:27:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"bid\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:32:25",
+        "message": "❌ 失败: Simulation timeout: exceeded maximum retries"
+      },
+      {
+        "time": "12:32:41",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_120d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:33:12",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_120d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:33:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"ask\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:34:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"vwp\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:34:35",
+        "message": "❌ 失败: Attempted to use unknown variable \"bid\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:37:23",
+        "message": "✅ 成功: rank(ts_rank(vwap, 20) - ts_ra..."
+      },
+      {
+        "time": "12:37:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"bid\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776828956442",
+    "name": "Backtest 1 Alphas",
+    "type": "backtest",
+    "status": "completed",
+    "progress": 1.0,
+    "completed": 1,
+    "total": 1,
+    "failed": 0,
+    "started_at": "2026-04-22T11:35:56.443220",
+    "finished_at": "2026-04-22T11:39:43.787378",
+    "error": null,
+    "details": [
+      {
+        "time": "11:39:40",
+        "message": "✅ 成功: rank(ts_mean(volume, 15) / ts_..."
+      },
+      {
+        "time": "11:39:43",
+        "message": "回测完成: 1 成功, 0 失败"
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776832864208",
+    "name": "Backtest 27954 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.002325248622737354,
+    "completed": 32,
+    "total": 27954,
+    "failed": 33,
+    "started_at": "2026-04-22T12:41:04.209920",
+    "finished_at": "2026-04-22T14:53:49.100479",
+    "error": null,
+    "details": [
+      {
+        "time": "12:41:22",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:41:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:42:03",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:42:39",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:42:49",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:42:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:43:13",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:45:17",
+        "message": "✅ 成功: rank(ts_rank(high, 40))..."
+      },
+      {
+        "time": "12:49:21",
+        "message": "✅ 成功: rank(ts_rank(close, 40) - ts_r..."
+      },
+      {
+        "time": "12:52:53",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "12:56:35",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "12:56:44",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:01:03",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:02:38",
+        "message": "✅ 成功: rank(ts_rank(adv20, 15))..."
+      },
+      {
+        "time": "13:05:06",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:06:45",
+        "message": "❌ 失败: There was an error while running the simulation. Please try again or contact BRAIN support if this problem persists."
+      },
+      {
+        "time": "13:09:14",
+        "message": "❌ 失败: There was an error while running the simulation. Please try again or contact BRAIN support if this problem persists."
+      },
+      {
+        "time": "13:14:37",
+        "message": "❌ 失败: Simulation timeout: exceeded maximum retries"
+      },
+      {
+        "time": "13:14:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:16:43",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:17:50",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:18:11",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:18:25",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:23:50",
+        "message": "❌ 失败: Simulation timeout: exceeded maximum retries"
+      },
+      {
+        "time": "13:25:51",
+        "message": "✅ 成功: rank(ts_rank(low, 20) - ts_ran..."
+      },
+      {
+        "time": "13:26:01",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:31:08",
+        "message": "✅ 成功: rank(ts_rank(low, 15) - ts_ran..."
+      },
+      {
+        "time": "13:33:40",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:34:10",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:34:25",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:38:58",
+        "message": "✅ 成功: rank(ts_rank(high, 15))..."
+      },
+      {
+        "time": "13:41:01",
+        "message": "✅ 成功: rank(ts_rank(cap, 40))..."
+      },
+      {
+        "time": "13:42:54",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:43:04",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:43:14",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:46:29",
+        "message": "✅ 成功: rank(ts_rank(open, 20) - ts_ra..."
+      },
+      {
+        "time": "13:47:10",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:47:53",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:49:39",
+        "message": "✅ 成功: rank(ts_rank(cap, 30))..."
+      },
+      {
+        "time": "13:54:23",
+        "message": "✅ 成功: rank(ts_rank(returns, 30) - ts..."
+      },
+      {
+        "time": "13:56:59",
+        "message": "✅ 成功: rank(ts_rank(close, 15) - ts_r..."
+      },
+      {
+        "time": "14:00:33",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:03:10",
+        "message": "✅ 成功: rank(ts_rank(cap, 15) - ts_ran..."
+      },
+      {
+        "time": "14:06:35",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:07:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:07:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:09:56",
+        "message": "✅ 成功: rank(ts_rank(cap, 30) - ts_ran..."
+      },
+      {
+        "time": "14:13:13",
+        "message": "✅ 成功: rank(ts_rank(close, 40))..."
+      },
+      {
+        "time": "14:15:51",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:16:22",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:17:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_60d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:20:27",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:20:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:23:36",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:26:09",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:27:49",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:32:39",
+        "message": "❌ 失败: 429 after 3 retries"
+      },
+      {
+        "time": "14:34:50",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:36:51",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:37:01",
+        "message": "❌ 失败: Attempted to use unknown variable \"adv10\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:39:52",
+        "message": "✅ 成功: rank(ts_rank(cap, 40) - ts_ran..."
+      },
+      {
+        "time": "14:41:31",
+        "message": "✅ 成功: rank(ts_rank(low, 30) - ts_ran..."
+      },
+      {
+        "time": "14:43:05",
+        "message": "✅ 成功: rank(ts_rank(high, 15) - ts_ra..."
+      },
+      {
+        "time": "14:47:53",
+        "message": "❌ 失败: 429 after 3 retries"
+      },
+      {
+        "time": "14:53:49",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776833187095",
+    "name": "Backtest 27789 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.0021231422505307855,
+    "completed": 42,
+    "total": 27789,
+    "failed": 17,
+    "started_at": "2026-04-22T12:46:27.096649",
+    "finished_at": "2026-04-22T14:53:07.857377",
+    "error": null,
+    "details": [
+      {
+        "time": "12:46:45",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "12:51:02",
+        "message": "✅ 成功: rank(ts_rank(high, 40))..."
+      },
+      {
+        "time": "12:53:38",
+        "message": "✅ 成功: rank(ts_rank(close, 40) - ts_r..."
+      },
+      {
+        "time": "12:57:12",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "12:59:45",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:00:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:03:14",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:05:24",
+        "message": "✅ 成功: rank(ts_rank(adv20, 15))..."
+      },
+      {
+        "time": "13:07:24",
+        "message": "❌ 失败: There was an error while running the simulation. Please try again or contact BRAIN support if this problem persists."
+      },
+      {
+        "time": "13:10:38",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:11:51",
+        "message": "❌ 失败: There was an error while running the simulation. Please try again or contact BRAIN support if this problem persists."
+      },
+      {
+        "time": "13:15:08",
+        "message": "❌ 失败: There was an error while running the simulation. Please try again or contact BRAIN support if this problem persists."
+      },
+      {
+        "time": "13:15:44",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:15:53",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:16:13",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:17:16",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:21:41",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:26:05",
+        "message": "✅ 成功: rank(ts_rank(low, 20) - ts_ran..."
+      },
+      {
+        "time": "13:30:20",
+        "message": "✅ 成功: rank(ts_rank(low, 15) - ts_ran..."
+      },
+      {
+        "time": "13:34:13",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:34:23",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:37:31",
+        "message": "✅ 成功: rank(ts_rank(high, 15))..."
+      },
+      {
+        "time": "13:39:48",
+        "message": "✅ 成功: rank(ts_rank(cap, 40))..."
+      },
+      {
+        "time": "13:41:33",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:42:56",
+        "message": "✅ 成功: rank(ts_rank(open, 20) - ts_ra..."
+      },
+      {
+        "time": "13:43:21",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "13:46:23",
+        "message": "✅ 成功: rank(ts_rank(cap, 30))..."
+      },
+      {
+        "time": "13:50:00",
+        "message": "✅ 成功: rank(ts_rank(returns, 30) - ts..."
+      },
+      {
+        "time": "13:52:42",
+        "message": "✅ 成功: rank(ts_rank(close, 15) - ts_r..."
+      },
+      {
+        "time": "13:54:36",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "13:58:18",
+        "message": "✅ 成功: rank(ts_rank(cap, 15) - ts_ran..."
+      },
+      {
+        "time": "14:01:50",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:02:05",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:04:48",
+        "message": "✅ 成功: rank(ts_rank(cap, 30) - ts_ran..."
+      },
+      {
+        "time": "14:08:40",
+        "message": "✅ 成功: rank(ts_rank(close, 40))..."
+      },
+      {
+        "time": "14:10:28",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:10:38",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:13:10",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:13:35",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:16:09",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:18:52",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:21:50",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:22:46",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:24:46",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:26:59",
+        "message": "✅ 成功: rank(ts_rank(cap, 40) - ts_ran..."
+      },
+      {
+        "time": "14:28:51",
+        "message": "✅ 成功: rank(ts_rank(low, 30) - ts_ran..."
+      },
+      {
+        "time": "14:30:38",
+        "message": "✅ 成功: rank(ts_rank(high, 15) - ts_ra..."
+      },
+      {
+        "time": "14:32:42",
+        "message": "✅ 成功: rank(ts_rank(low, 40) - ts_ran..."
+      },
+      {
+        "time": "14:34:54",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:36:36",
+        "message": "✅ 成功: rank(ts_rank(returns, 20) - ts..."
+      },
+      {
+        "time": "14:38:22",
+        "message": "✅ 成功: rank(ts_rank(low, 15))..."
+      },
+      {
+        "time": "14:40:11",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:42:44",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:45:19",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:47:15",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:47:34",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_20d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:51:08",
+        "message": "✅ 成功: rank(ts_rank(volume, 30) - ts_..."
+      },
+      {
+        "time": "14:51:17",
+        "message": "❌ 失败: Attempted to use unknown variable \"ret_252d\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "14:53:07",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776838492662",
+    "name": "Backtest 6508 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.001229256299938537,
+    "completed": 6,
+    "total": 6508,
+    "failed": 2,
+    "started_at": "2026-04-22T14:14:52.662787",
+    "finished_at": "2026-04-22T14:52:04.547701",
+    "error": null,
+    "details": [
+      {
+        "time": "14:18:36",
+        "message": "✅ 成功: rank(ts_rank(high, 40))..."
+      },
+      {
+        "time": "14:23:55",
+        "message": "❌ 失败: Simulation timeout: exceeded maximum retries"
+      },
+      {
+        "time": "14:30:15",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:33:56",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:38:44",
+        "message": "❌ 失败: 429 after 3 retries"
+      },
+      {
+        "time": "14:45:05",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:49:03",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      },
+      {
+        "time": "14:52:04",
+        "message": "✅ 成功: group_neutralize(rank(ts_rank(..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776839346498",
+    "name": "Backtest 6508 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.0010755992624462201,
+    "completed": 6,
+    "total": 6508,
+    "failed": 1,
+    "started_at": "2026-04-22T14:29:06.499587",
+    "finished_at": "2026-04-22T14:52:42.755843",
+    "error": null,
+    "details": [
+      {
+        "time": "14:33:52",
+        "message": "❌ 失败: 429 after 3 retries"
+      },
+      {
+        "time": "14:37:15",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "14:41:30",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "14:44:30",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "14:47:47",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "14:49:55",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "14:51:48",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776840922436",
+    "name": "Backtest 8520 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.00046948356807511736,
+    "completed": 4,
+    "total": 8520,
+    "failed": 0,
+    "started_at": "2026-04-22T14:55:22.438218",
+    "finished_at": "2026-04-22T15:11:04.289963",
+    "error": null,
+    "details": [
+      {
+        "time": "14:58:48",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:02:01",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:04:41",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:07:49",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776841925867",
+    "name": "Backtest 8520 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.0029342723004694834,
+    "completed": 25,
+    "total": 8520,
+    "failed": 0,
+    "started_at": "2026-04-22T15:12:05.868679",
+    "finished_at": "2026-04-22T16:35:26.976954",
+    "error": null,
+    "details": [
+      {
+        "time": "15:14:43",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:17:59",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:20:21",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:24:00",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:26:00",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:28:56",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:31:14",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:33:10",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:35:42",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:37:49",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:40:00",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:42:57",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:47:24",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:49:40",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:51:24",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:53:19",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:55:19",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "15:58:03",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "16:00:48",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "16:03:04",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "16:05:20",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "16:07:00",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "16:08:49",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "16:11:10",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      },
+      {
+        "time": "16:13:54",
+        "message": "✅ 成功: group_rank(ts_rank(assets/clos..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1776851962421",
+    "name": "Backtest 8515 Alphas",
+    "type": "backtest",
+    "status": "stopped",
+    "progress": 0.08455666470933647,
+    "completed": 716,
+    "total": 8515,
+    "failed": 4,
+    "started_at": "2026-04-22T17:59:22.422269",
+    "finished_at": "2026-04-25T11:14:49.400433",
+    "error": null,
+    "details": [
+      {
+        "time": "21:19:44",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:23:09",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:25:36",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:26:57",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:29:12",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:31:46",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:33:54",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:35:47",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:38:31",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:41:40",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:43:39",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:46:51",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:49:00",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:51:49",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:53:47",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "21:56:23",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:01:14",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:04:17",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:06:37",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:08:56",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:11:30",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:12:58",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:14:36",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:16:11",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:18:35",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:20:08",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:21:38",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:23:18",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:27:20",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:29:44",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:31:30",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:34:24",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:37:39",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:39:59",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:44:02",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:48:57",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:50:42",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:52:44",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:54:30",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "22:57:50",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:00:51",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:02:46",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:06:38",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:08:23",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:10:25",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:12:49",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:16:18",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:20:36",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:24:00",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:26:04",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:27:50",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:31:36",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:34:21",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:36:45",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:38:57",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:41:34",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:44:19",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:47:39",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:50:17",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:54:27",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:56:28",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "23:57:58",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:01:04",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:03:02",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:06:28",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:09:55",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:13:27",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:14:50",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:17:49",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:21:32",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:24:18",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:26:48",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:29:57",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:31:44",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:33:45",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:35:38",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:37:16",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:39:18",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:40:47",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:43:04",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:45:33",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:47:58",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:49:31",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:51:45",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:53:08",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:56:15",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "00:58:58",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:04:15",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:07:28",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:09:13",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:11:46",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:15:56",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:18:36",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:21:13",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:24:04",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:27:00",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:29:44",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:33:15",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:37:18",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      },
+      {
+        "time": "01:39:58",
+        "message": "✅ 成功: group_rank(ts_rank(liabilities..."
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "backtest_1777086908800",
+    "name": "Backtest 183 Alphas",
+    "type": "backtest",
+    "status": "completed",
+    "progress": 1.0,
+    "completed": 123,
+    "total": 183,
+    "failed": 60,
+    "started_at": "2026-04-25T11:15:08.801902",
+    "finished_at": "2026-04-25T19:02:38.122011",
+    "error": null,
+    "details": [
+      {
+        "time": "14:35:34",
+        "message": "✅ 成功: rank(-1 * cash)..."
+      },
+      {
+        "time": "14:39:10",
+        "message": "✅ 成功: if_else(rank(fnd6_aodo) > 0.5,..."
+      },
+      {
+        "time": "14:42:00",
+        "message": "✅ 成功: rank(cashflow)..."
+      },
+      {
+        "time": "14:45:09",
+        "message": "✅ 成功: if_else(rank(fnd6_acodo) > 0.5..."
+      },
+      {
+        "time": "14:50:03",
+        "message": "✅ 成功: power(rank(debt_st), 0.5)..."
+      },
+      {
+        "time": "14:51:41",
+        "message": "✅ 成功: power(rank(ebitda), 2)..."
+      },
+      {
+        "time": "14:54:46",
+        "message": "✅ 成功: power(rank(fnd6_capxv), 2)..."
+      },
+      {
+        "time": "14:56:16",
+        "message": "✅ 成功: rank(group_neutralize(if_else(..."
+      },
+      {
+        "time": "15:02:39",
+        "message": "✅ 成功: rank(-1 * fnd6_acqgdwl)..."
+      },
+      {
+        "time": "15:05:53",
+        "message": "✅ 成功: ts_decay_linear(power(rank(emp..."
+      },
+      {
+        "time": "15:10:46",
+        "message": "✅ 成功: ts_decay_linear(rank(-1/cap) *..."
+      },
+      {
+        "time": "15:15:26",
+        "message": "✅ 成功: group_zscore(rank(-1 * cashflo..."
+      },
+      {
+        "time": "15:17:03",
+        "message": "✅ 成功: rank(-1 * fnd6_aox)..."
+      },
+      {
+        "time": "15:19:13",
+        "message": "✅ 成功: power(rank(fnd6_acdo), 2)..."
+      },
+      {
+        "time": "15:19:33",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "15:19:38",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "15:23:27",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "15:25:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "15:27:07",
+        "message": "✅ 成功: group_neutralize(power(rank(as..."
+      },
+      {
+        "time": "15:32:37",
+        "message": "✅ 成功: rank(fnd6_cibegni)..."
+      },
+      {
+        "time": "15:36:53",
+        "message": "✅ 成功: if_else(rank(fnd6_aldo) > 0.5,..."
+      },
+      {
+        "time": "15:48:33",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acdo..."
+      },
+      {
+        "time": "15:52:08",
+        "message": "✅ 成功: group_neutralize(if_else(rank(..."
+      },
+      {
+        "time": "15:53:35",
+        "message": "✅ 成功: rank(equity)..."
+      },
+      {
+        "time": "15:55:16",
+        "message": "✅ 成功: rank(-1/cap) * employee..."
+      },
+      {
+        "time": "15:58:09",
+        "message": "✅ 成功: rank(fnd6_aqi)..."
+      },
+      {
+        "time": "16:01:29",
+        "message": "✅ 成功: rank(-1 * equity)..."
+      },
+      {
+        "time": "16:03:10",
+        "message": "✅ 成功: rank(-1/cap) * equity..."
+      },
+      {
+        "time": "16:04:42",
+        "message": "✅ 成功: power(rank(fnd6_adesinda_curcd..."
+      },
+      {
+        "time": "16:04:50",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "16:06:54",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_ciother..."
+      },
+      {
+        "time": "16:10:37",
+        "message": "✅ 成功: ts_decay_linear(rank(-1/cap) *..."
+      },
+      {
+        "time": "16:15:14",
+        "message": "✅ 成功: rank(fnd6_aodo)..."
+      },
+      {
+        "time": "16:18:48",
+        "message": "✅ 成功: ts_zscore(rank(cashflow_divide..."
+      },
+      {
+        "time": "16:21:11",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_cipen..."
+      },
+      {
+        "time": "16:21:19",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "16:21:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "16:29:06",
+        "message": "✅ 成功: ts_zscore(power(rank(eps), 0.5..."
+      },
+      {
+        "time": "16:31:58",
+        "message": "✅ 成功: rank(fnd6_acodo)..."
+      },
+      {
+        "time": "16:33:18",
+        "message": "✅ 成功: rank(-1 * assets)..."
+      },
+      {
+        "time": "16:35:35",
+        "message": "✅ 成功: if_else(rank(cashflow) > 0.5, ..."
+      },
+      {
+        "time": "16:35:40",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "16:35:46",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "16:37:31",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acox..."
+      },
+      {
+        "time": "16:40:51",
+        "message": "✅ 成功: rank(-1 * bookvalue_ps)..."
+      },
+      {
+        "time": "16:43:25",
+        "message": "✅ 成功: if_else(rank(fnd6_ciother) > 0..."
+      },
+      {
+        "time": "16:47:27",
+        "message": "✅ 成功: group_rank(if_else(rank(debt_s..."
+      },
+      {
+        "time": "16:50:59",
+        "message": "✅ 成功: power(rank(bookvalue_ps), 2)..."
+      },
+      {
+        "time": "16:54:22",
+        "message": "✅ 成功: rank(fnd6_acqintan)..."
+      },
+      {
+        "time": "16:54:32",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "16:58:45",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acqintan..."
+      },
+      {
+        "time": "17:00:57",
+        "message": "✅ 成功: ts_zscore(group_zscore(rank(-1..."
+      },
+      {
+        "time": "17:03:32",
+        "message": "✅ 成功: rank(-1 * debt_st)..."
+      },
+      {
+        "time": "17:03:45",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "17:05:25",
+        "message": "✅ 成功: rank(fnd6_ciother)..."
+      },
+      {
+        "time": "17:07:28",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_adesinda_c..."
+      },
+      {
+        "time": "17:09:43",
+        "message": "✅ 成功: rank(-1/cap) * ebitda..."
+      },
+      {
+        "time": "17:14:16",
+        "message": "✅ 成功: group_rank(power(rank(cashflow..."
+      },
+      {
+        "time": "17:18:37",
+        "message": "✅ 成功: group_rank(if_else(rank(cash) ..."
+      },
+      {
+        "time": "17:23:50",
+        "message": "✅ 成功: rank(assets_curr)..."
+      },
+      {
+        "time": "17:28:36",
+        "message": "✅ 成功: rank(-1 * debt_lt)..."
+      },
+      {
+        "time": "17:30:09",
+        "message": "✅ 成功: group_neutralize(rank(fnd6_ceq..."
+      },
+      {
+        "time": "17:30:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "17:32:19",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "17:36:46",
+        "message": "✅ 成功: rank(power(rank(fnd6_cimii), 2..."
+      },
+      {
+        "time": "17:39:13",
+        "message": "✅ 成功: group_zscore(if_else(rank(fnd6..."
+      },
+      {
+        "time": "17:40:53",
+        "message": "✅ 成功: rank(rank(ebit))..."
+      },
+      {
+        "time": "17:44:09",
+        "message": "✅ 成功: power(rank(cashflow_fin), 0.5)..."
+      },
+      {
+        "time": "17:45:41",
+        "message": "✅ 成功: power(rank(ebit), 0.5)..."
+      },
+      {
+        "time": "17:49:02",
+        "message": "✅ 成功: group_zscore(if_else(rank(fnd6..."
+      },
+      {
+        "time": "17:53:07",
+        "message": "✅ 成功: if_else(rank(equity) > 0.5, 1,..."
+      },
+      {
+        "time": "17:54:58",
+        "message": "✅ 成功: if_else(rank(cogs) > 0.5, 1, -..."
+      },
+      {
+        "time": "17:59:21",
+        "message": "✅ 成功: rank(-1 * fnd6_acqintan)..."
+      },
+      {
+        "time": "17:59:45",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "17:59:56",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "18:01:58",
+        "message": "✅ 成功: group_rank(power(rank(fnd6_aox..."
+      },
+      {
+        "time": "18:04:12",
+        "message": "✅ 成功: rank(-1 * fnd6_acox)..."
+      },
+      {
+        "time": "18:05:47",
+        "message": "✅ 成功: rank(-1 * fnd6_capxv)..."
+      },
+      {
+        "time": "18:08:35",
+        "message": "✅ 成功: rank(-1 * fnd6_cicurr)..."
+      },
+      {
+        "time": "18:09:05",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "18:09:29",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "18:13:55",
+        "message": "✅ 成功: rank(depre_amort)..."
+      },
+      {
+        "time": "18:16:27",
+        "message": "✅ 成功: group_rank(rank(-1/cap) * fnd6..."
+      },
+      {
+        "time": "18:21:09",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_cimii..."
+      },
+      {
+        "time": "18:21:18",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "18:25:13",
+        "message": "✅ 成功: if_else(rank(fnd6_aqc) > 0.5, ..."
+      },
+      {
+        "time": "18:29:09",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "18:34:47",
+        "message": "✅ 成功: rank(-1/cap) * cashflow_fin..."
+      },
+      {
+        "time": "18:39:02",
+        "message": "✅ 成功: group_neutralize(rank(-1 * fnd..."
+      },
+      {
+        "time": "18:44:17",
+        "message": "✅ 成功: rank(cashflow_fin)..."
+      },
+      {
+        "time": "18:46:08",
+        "message": "✅ 成功: ts_decay_linear(power(rank(cog..."
+      },
+      {
+        "time": "18:47:56",
+        "message": "✅ 成功: group_neutralize(power(rank(as..."
+      },
+      {
+        "time": "18:52:22",
+        "message": "✅ 成功: rank(fnd6_acox)..."
+      },
+      {
+        "time": "18:54:02",
+        "message": "✅ 成功: rank(fnd6_ch)..."
+      },
+      {
+        "time": "18:55:40",
+        "message": "✅ 成功: rank(power(rank(bookvalue_ps),..."
+      },
+      {
+        "time": "18:57:41",
+        "message": "✅ 成功: rank(-1/cap) * cashflow_divide..."
+      },
+      {
+        "time": "19:00:29",
+        "message": "✅ 成功: if_else(rank(fnd6_cik) > 0.5, ..."
+      },
+      {
+        "time": "19:02:13",
+        "message": "✅ 成功: rank(power(rank(fnd6_beta), 0...."
+      },
+      {
+        "time": "19:02:36",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "19:02:38",
+        "message": "回测完成: 123 成功, 60 失败"
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "sync_full_1777099032903",
+    "name": "全量同步",
+    "type": "sync",
+    "status": "completed",
+    "progress": 0.0,
+    "total": 1,
+    "completed": 0,
+    "failed": 0,
+    "started_at": "2026-04-25T14:37:12.904669",
+    "finished_at": "2026-04-25T14:41:55.864481",
+    "error": null,
+    "details": [
+      {
+        "time": "14:37:12",
+        "message": "全量同步开始..."
+      },
+      {
+        "time": "14:37:12",
+        "message": "正在初始化客户端..."
+      },
+      {
+        "time": "14:37:12",
+        "message": "正在认证..."
+      },
+      {
+        "time": "14:37:14",
+        "message": "正在获取所有 Alpha (这可能需要几分钟...)"
+      },
+      {
+        "time": "14:41:55",
+        "message": "获取完成，共 7984 个 Alpha，正在保存..."
+      },
+      {
+        "time": "14:41:55",
+        "message": "保存完成: 新增738, 更新7246"
+      }
+    ]
+  },
+  {
+    "id": "backtest_1777099967181",
+    "name": "Backtest 227 Alphas",
+    "type": "backtest",
+    "status": "completed",
+    "progress": 1.0,
+    "completed": 164,
+    "total": 227,
+    "failed": 63,
+    "started_at": "2026-04-25T14:52:47.182712",
+    "finished_at": "2026-04-26T02:09:44.320967",
+    "error": null,
+    "details": [
+      {
+        "time": "20:43:14",
+        "message": "✅ 成功: rank(-1 * cash)..."
+      },
+      {
+        "time": "20:45:14",
+        "message": "✅ 成功: if_else(rank(fnd6_aodo) > 0.5,..."
+      },
+      {
+        "time": "20:50:47",
+        "message": "✅ 成功: rank(cashflow)..."
+      },
+      {
+        "time": "20:53:08",
+        "message": "✅ 成功: if_else(rank(fnd6_acodo) > 0.5..."
+      },
+      {
+        "time": "20:57:32",
+        "message": "✅ 成功: power(rank(debt_st), 0.5)..."
+      },
+      {
+        "time": "21:02:37",
+        "message": "✅ 成功: power(rank(ebitda), 2)..."
+      },
+      {
+        "time": "21:07:07",
+        "message": "✅ 成功: power(rank(fnd6_capxv), 2)..."
+      },
+      {
+        "time": "21:08:59",
+        "message": "✅ 成功: rank(group_neutralize(if_else(..."
+      },
+      {
+        "time": "21:10:41",
+        "message": "✅ 成功: rank(-1 * fnd6_acqgdwl)..."
+      },
+      {
+        "time": "21:17:44",
+        "message": "✅ 成功: ts_decay_linear(power(rank(emp..."
+      },
+      {
+        "time": "21:24:57",
+        "message": "✅ 成功: ts_decay_linear(rank(-1/cap) *..."
+      },
+      {
+        "time": "21:27:57",
+        "message": "✅ 成功: group_zscore(rank(-1 * cashflo..."
+      },
+      {
+        "time": "21:31:56",
+        "message": "✅ 成功: rank(-1 * fnd6_aox)..."
+      },
+      {
+        "time": "21:33:20",
+        "message": "✅ 成功: power(rank(fnd6_acdo), 2)..."
+      },
+      {
+        "time": "21:33:33",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "21:33:53",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "21:33:59",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "21:34:11",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "21:35:51",
+        "message": "✅ 成功: group_neutralize(power(rank(as..."
+      },
+      {
+        "time": "21:38:37",
+        "message": "✅ 成功: rank(fnd6_cibegni)..."
+      },
+      {
+        "time": "21:41:38",
+        "message": "✅ 成功: if_else(rank(fnd6_aldo) > 0.5,..."
+      },
+      {
+        "time": "21:46:33",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acdo..."
+      },
+      {
+        "time": "21:50:44",
+        "message": "✅ 成功: group_neutralize(if_else(rank(..."
+      },
+      {
+        "time": "21:52:59",
+        "message": "✅ 成功: rank(equity)..."
+      },
+      {
+        "time": "21:55:11",
+        "message": "✅ 成功: rank(-1/cap) * employee..."
+      },
+      {
+        "time": "22:12:02",
+        "message": "✅ 成功: rank(fnd6_aqi)..."
+      },
+      {
+        "time": "22:13:30",
+        "message": "✅ 成功: rank(-1 * equity)..."
+      },
+      {
+        "time": "22:19:38",
+        "message": "✅ 成功: rank(-1/cap) * equity..."
+      },
+      {
+        "time": "22:22:07",
+        "message": "✅ 成功: power(rank(fnd6_adesinda_curcd..."
+      },
+      {
+        "time": "22:22:29",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "22:28:35",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_ciother..."
+      },
+      {
+        "time": "22:45:45",
+        "message": "✅ 成功: ts_decay_linear(rank(-1/cap) *..."
+      },
+      {
+        "time": "22:48:04",
+        "message": "✅ 成功: rank(fnd6_aodo)..."
+      },
+      {
+        "time": "22:49:23",
+        "message": "✅ 成功: ts_zscore(rank(cashflow_divide..."
+      },
+      {
+        "time": "22:54:27",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_cipen..."
+      },
+      {
+        "time": "22:59:04",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "22:59:26",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "23:05:08",
+        "message": "✅ 成功: ts_zscore(power(rank(eps), 0.5..."
+      },
+      {
+        "time": "23:14:30",
+        "message": "✅ 成功: rank(fnd6_acodo)..."
+      },
+      {
+        "time": "23:16:05",
+        "message": "✅ 成功: rank(-1 * assets)..."
+      },
+      {
+        "time": "23:21:12",
+        "message": "✅ 成功: if_else(rank(cashflow) > 0.5, ..."
+      },
+      {
+        "time": "23:21:20",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "23:22:40",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "23:27:19",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acox..."
+      },
+      {
+        "time": "23:29:46",
+        "message": "✅ 成功: rank(-1 * bookvalue_ps)..."
+      },
+      {
+        "time": "23:32:28",
+        "message": "✅ 成功: if_else(rank(fnd6_ciother) > 0..."
+      },
+      {
+        "time": "23:38:40",
+        "message": "✅ 成功: group_rank(if_else(rank(debt_s..."
+      },
+      {
+        "time": "23:44:22",
+        "message": "✅ 成功: power(rank(bookvalue_ps), 2)..."
+      },
+      {
+        "time": "23:51:35",
+        "message": "✅ 成功: rank(fnd6_acqintan)..."
+      },
+      {
+        "time": "23:53:59",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "23:57:30",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acqintan..."
+      },
+      {
+        "time": "23:59:20",
+        "message": "✅ 成功: ts_zscore(group_zscore(rank(-1..."
+      },
+      {
+        "time": "00:01:07",
+        "message": "✅ 成功: rank(-1 * debt_st)..."
+      },
+      {
+        "time": "00:01:23",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "00:04:20",
+        "message": "✅ 成功: rank(fnd6_ciother)..."
+      },
+      {
+        "time": "00:06:27",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_adesinda_c..."
+      },
+      {
+        "time": "00:10:55",
+        "message": "✅ 成功: rank(-1/cap) * ebitda..."
+      },
+      {
+        "time": "00:13:15",
+        "message": "✅ 成功: group_rank(power(rank(cashflow..."
+      },
+      {
+        "time": "00:16:39",
+        "message": "✅ 成功: group_rank(if_else(rank(cash) ..."
+      },
+      {
+        "time": "00:19:41",
+        "message": "✅ 成功: rank(assets_curr)..."
+      },
+      {
+        "time": "00:24:18",
+        "message": "✅ 成功: rank(-1 * debt_lt)..."
+      },
+      {
+        "time": "00:28:45",
+        "message": "✅ 成功: group_neutralize(rank(fnd6_ceq..."
+      },
+      {
+        "time": "00:29:18",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "00:29:31",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "00:34:51",
+        "message": "✅ 成功: rank(power(rank(fnd6_cimii), 2..."
+      },
+      {
+        "time": "00:36:49",
+        "message": "✅ 成功: group_zscore(if_else(rank(fnd6..."
+      },
+      {
+        "time": "00:40:33",
+        "message": "✅ 成功: rank(rank(ebit))..."
+      },
+      {
+        "time": "00:43:41",
+        "message": "✅ 成功: power(rank(cashflow_fin), 0.5)..."
+      },
+      {
+        "time": "00:50:05",
+        "message": "✅ 成功: power(rank(ebit), 0.5)..."
+      },
+      {
+        "time": "00:51:54",
+        "message": "✅ 成功: group_zscore(if_else(rank(fnd6..."
+      },
+      {
+        "time": "00:53:45",
+        "message": "✅ 成功: if_else(rank(equity) > 0.5, 1,..."
+      },
+      {
+        "time": "00:55:22",
+        "message": "✅ 成功: if_else(rank(cogs) > 0.5, 1, -..."
+      },
+      {
+        "time": "00:58:35",
+        "message": "✅ 成功: rank(-1 * fnd6_acqintan)..."
+      },
+      {
+        "time": "01:04:36",
+        "message": "✅ 成功: group_zscore(rank(-market_cap)..."
+      },
+      {
+        "time": "01:05:04",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "01:09:24",
+        "message": "✅ 成功: group_rank(power(rank(fnd6_aox..."
+      },
+      {
+        "time": "01:12:11",
+        "message": "✅ 成功: rank(-1 * fnd6_acox)..."
+      },
+      {
+        "time": "01:17:45",
+        "message": "✅ 成功: rank(-1 * fnd6_capxv)..."
+      },
+      {
+        "time": "01:20:46",
+        "message": "✅ 成功: rank(-1 * fnd6_cicurr)..."
+      },
+      {
+        "time": "01:23:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "01:26:48",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "01:29:27",
+        "message": "✅ 成功: rank(depre_amort)..."
+      },
+      {
+        "time": "01:34:04",
+        "message": "✅ 成功: group_rank(rank(-1/cap) * fnd6..."
+      },
+      {
+        "time": "01:35:55",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_cimii..."
+      },
+      {
+        "time": "01:36:31",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "01:38:03",
+        "message": "✅ 成功: if_else(rank(fnd6_aqc) > 0.5, ..."
+      },
+      {
+        "time": "01:38:09",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "01:39:37",
+        "message": "✅ 成功: rank(-1/cap) * cashflow_fin..."
+      },
+      {
+        "time": "01:43:29",
+        "message": "✅ 成功: group_neutralize(rank(-1 * fnd..."
+      },
+      {
+        "time": "01:46:51",
+        "message": "✅ 成功: rank(cashflow_fin)..."
+      },
+      {
+        "time": "01:48:58",
+        "message": "✅ 成功: ts_decay_linear(power(rank(cog..."
+      },
+      {
+        "time": "01:52:25",
+        "message": "✅ 成功: group_neutralize(power(rank(as..."
+      },
+      {
+        "time": "01:54:57",
+        "message": "✅ 成功: rank(fnd6_acox)..."
+      },
+      {
+        "time": "01:58:50",
+        "message": "✅ 成功: rank(fnd6_ch)..."
+      },
+      {
+        "time": "02:00:25",
+        "message": "✅ 成功: rank(power(rank(bookvalue_ps),..."
+      },
+      {
+        "time": "02:04:38",
+        "message": "✅ 成功: rank(-1/cap) * cashflow_divide..."
+      },
+      {
+        "time": "02:06:57",
+        "message": "✅ 成功: if_else(rank(fnd6_cik) > 0.5, ..."
+      },
+      {
+        "time": "02:09:34",
+        "message": "✅ 成功: rank(power(rank(fnd6_beta), 0...."
+      },
+      {
+        "time": "02:09:42",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "02:09:44",
+        "message": "回测完成: 164 成功, 63 失败"
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  },
+  {
+    "id": "sync_full_1777118352776",
+    "name": "全量同步",
+    "type": "sync",
+    "status": "completed",
+    "progress": 0.0,
+    "total": 1,
+    "completed": 0,
+    "failed": 0,
+    "started_at": "2026-04-25T19:59:12.776393",
+    "finished_at": "2026-04-25T20:03:36.883784",
+    "error": null,
+    "details": [
+      {
+        "time": "19:59:12",
+        "message": "全量同步开始..."
+      },
+      {
+        "time": "19:59:12",
+        "message": "正在初始化客户端..."
+      },
+      {
+        "time": "19:59:12",
+        "message": "正在认证..."
+      },
+      {
+        "time": "19:59:14",
+        "message": "正在获取所有 Alpha (这可能需要几分钟...)"
+      },
+      {
+        "time": "20:03:36",
+        "message": "获取完成，共 8066 个 Alpha，正在保存..."
+      },
+      {
+        "time": "20:03:36",
+        "message": "保存完成: 新增82, 更新7984"
+      }
+    ]
+  },
+  {
+    "id": "sync_full_1777123782303",
+    "name": "全量同步",
+    "type": "sync",
+    "status": "completed",
+    "progress": 0.0,
+    "total": 1,
+    "completed": 0,
+    "failed": 0,
+    "started_at": "2026-04-25T21:29:42.304541",
+    "finished_at": "2026-04-25T21:33:47.977023",
+    "error": null,
+    "details": [
+      {
+        "time": "21:29:42",
+        "message": "全量同步开始..."
+      },
+      {
+        "time": "21:29:42",
+        "message": "正在初始化客户端..."
+      },
+      {
+        "time": "21:29:42",
+        "message": "正在认证..."
+      },
+      {
+        "time": "21:29:46",
+        "message": "正在获取所有 Alpha (这可能需要几分钟...)"
+      },
+      {
+        "time": "21:33:47",
+        "message": "获取完成，共 8096 个 Alpha，正在保存..."
+      },
+      {
+        "time": "21:33:47",
+        "message": "保存完成: 新增31, 更新8065"
+      }
+    ]
+  },
+  {
+    "id": "backtest_1777125015215",
+    "name": "Backtest 323 Alphas",
+    "type": "backtest",
+    "status": "completed",
+    "progress": 1.0,
+    "completed": 205,
+    "total": 323,
+    "failed": 118,
+    "started_at": "2026-04-25T21:50:15.216935",
+    "finished_at": "2026-04-26T10:17:17.380747",
+    "error": null,
+    "details": [
+      {
+        "time": "06:12:07",
+        "message": "✅ 成功: rank(-1 * cash)..."
+      },
+      {
+        "time": "06:14:02",
+        "message": "✅ 成功: if_else(rank(fnd6_aodo) > 0.5,..."
+      },
+      {
+        "time": "06:16:23",
+        "message": "✅ 成功: rank(cashflow)..."
+      },
+      {
+        "time": "06:18:26",
+        "message": "✅ 成功: if_else(rank(fnd6_acodo) > 0.5..."
+      },
+      {
+        "time": "06:22:18",
+        "message": "✅ 成功: power(rank(debt_st), 0.5)..."
+      },
+      {
+        "time": "06:24:56",
+        "message": "✅ 成功: power(rank(ebitda), 2)..."
+      },
+      {
+        "time": "06:26:53",
+        "message": "✅ 成功: power(rank(fnd6_capxv), 2)..."
+      },
+      {
+        "time": "06:29:54",
+        "message": "✅ 成功: rank(group_neutralize(if_else(..."
+      },
+      {
+        "time": "06:33:43",
+        "message": "✅ 成功: rank(-1 * fnd6_acqgdwl)..."
+      },
+      {
+        "time": "06:38:04",
+        "message": "✅ 成功: ts_decay_linear(power(rank(emp..."
+      },
+      {
+        "time": "06:40:16",
+        "message": "✅ 成功: ts_decay_linear(rank(-1/cap) *..."
+      },
+      {
+        "time": "06:41:45",
+        "message": "✅ 成功: group_zscore(rank(-1 * cashflo..."
+      },
+      {
+        "time": "06:43:44",
+        "message": "✅ 成功: rank(-1 * fnd6_aox)..."
+      },
+      {
+        "time": "06:46:36",
+        "message": "✅ 成功: power(rank(fnd6_acdo), 2)..."
+      },
+      {
+        "time": "06:46:44",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "06:46:49",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "06:46:55",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "06:47:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "06:49:06",
+        "message": "✅ 成功: group_neutralize(power(rank(as..."
+      },
+      {
+        "time": "06:51:49",
+        "message": "✅ 成功: rank(fnd6_cibegni)..."
+      },
+      {
+        "time": "06:57:01",
+        "message": "✅ 成功: if_else(rank(fnd6_aldo) > 0.5,..."
+      },
+      {
+        "time": "07:02:23",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acdo..."
+      },
+      {
+        "time": "07:07:35",
+        "message": "✅ 成功: group_neutralize(if_else(rank(..."
+      },
+      {
+        "time": "07:09:51",
+        "message": "✅ 成功: rank(equity)..."
+      },
+      {
+        "time": "07:12:09",
+        "message": "✅ 成功: rank(-1/cap) * employee..."
+      },
+      {
+        "time": "07:15:47",
+        "message": "✅ 成功: rank(fnd6_aqi)..."
+      },
+      {
+        "time": "07:18:10",
+        "message": "✅ 成功: rank(-1 * equity)..."
+      },
+      {
+        "time": "07:21:40",
+        "message": "✅ 成功: rank(-1/cap) * equity..."
+      },
+      {
+        "time": "07:24:56",
+        "message": "✅ 成功: power(rank(fnd6_adesinda_curcd..."
+      },
+      {
+        "time": "07:25:59",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "07:30:58",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_ciother..."
+      },
+      {
+        "time": "07:32:34",
+        "message": "✅ 成功: ts_decay_linear(rank(-1/cap) *..."
+      },
+      {
+        "time": "07:34:19",
+        "message": "✅ 成功: rank(fnd6_aodo)..."
+      },
+      {
+        "time": "07:37:42",
+        "message": "✅ 成功: ts_zscore(rank(cashflow_divide..."
+      },
+      {
+        "time": "07:40:31",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_cipen..."
+      },
+      {
+        "time": "07:40:39",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "07:40:54",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "07:42:57",
+        "message": "✅ 成功: ts_zscore(power(rank(eps), 0.5..."
+      },
+      {
+        "time": "07:46:35",
+        "message": "✅ 成功: rank(fnd6_acodo)..."
+      },
+      {
+        "time": "07:50:00",
+        "message": "✅ 成功: rank(-1 * assets)..."
+      },
+      {
+        "time": "07:54:50",
+        "message": "✅ 成功: if_else(rank(cashflow) > 0.5, ..."
+      },
+      {
+        "time": "07:54:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "07:55:07",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "07:58:52",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acox..."
+      },
+      {
+        "time": "08:00:47",
+        "message": "✅ 成功: rank(-1 * bookvalue_ps)..."
+      },
+      {
+        "time": "08:04:23",
+        "message": "✅ 成功: if_else(rank(fnd6_ciother) > 0..."
+      },
+      {
+        "time": "08:08:35",
+        "message": "✅ 成功: group_rank(if_else(rank(debt_s..."
+      },
+      {
+        "time": "08:10:22",
+        "message": "✅ 成功: power(rank(bookvalue_ps), 2)..."
+      },
+      {
+        "time": "08:14:56",
+        "message": "✅ 成功: rank(fnd6_acqintan)..."
+      },
+      {
+        "time": "08:15:19",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "08:20:24",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_acqintan..."
+      },
+      {
+        "time": "08:22:17",
+        "message": "✅ 成功: ts_zscore(group_zscore(rank(-1..."
+      },
+      {
+        "time": "08:26:53",
+        "message": "✅ 成功: rank(-1 * debt_st)..."
+      },
+      {
+        "time": "08:27:01",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "08:31:07",
+        "message": "✅ 成功: rank(fnd6_ciother)..."
+      },
+      {
+        "time": "08:32:51",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_adesinda_c..."
+      },
+      {
+        "time": "08:36:32",
+        "message": "✅ 成功: rank(-1/cap) * ebitda..."
+      },
+      {
+        "time": "08:38:21",
+        "message": "✅ 成功: group_rank(power(rank(cashflow..."
+      },
+      {
+        "time": "08:40:46",
+        "message": "✅ 成功: group_rank(if_else(rank(cash) ..."
+      },
+      {
+        "time": "08:43:25",
+        "message": "✅ 成功: rank(assets_curr)..."
+      },
+      {
+        "time": "08:47:31",
+        "message": "✅ 成功: rank(-1 * debt_lt)..."
+      },
+      {
+        "time": "08:50:42",
+        "message": "✅ 成功: group_neutralize(rank(fnd6_ceq..."
+      },
+      {
+        "time": "08:51:10",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "08:51:21",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "08:53:58",
+        "message": "✅ 成功: rank(power(rank(fnd6_cimii), 2..."
+      },
+      {
+        "time": "08:55:28",
+        "message": "✅ 成功: group_zscore(if_else(rank(fnd6..."
+      },
+      {
+        "time": "08:59:15",
+        "message": "✅ 成功: rank(rank(ebit))..."
+      },
+      {
+        "time": "09:01:19",
+        "message": "✅ 成功: power(rank(cashflow_fin), 0.5)..."
+      },
+      {
+        "time": "09:02:42",
+        "message": "✅ 成功: power(rank(ebit), 0.5)..."
+      },
+      {
+        "time": "09:06:46",
+        "message": "✅ 成功: group_zscore(if_else(rank(fnd6..."
+      },
+      {
+        "time": "09:08:21",
+        "message": "✅ 成功: if_else(rank(equity) > 0.5, 1,..."
+      },
+      {
+        "time": "09:11:57",
+        "message": "✅ 成功: if_else(rank(cogs) > 0.5, 1, -..."
+      },
+      {
+        "time": "09:15:10",
+        "message": "✅ 成功: rank(-1 * fnd6_acqintan)..."
+      },
+      {
+        "time": "09:16:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "09:16:28",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "09:18:25",
+        "message": "✅ 成功: group_rank(power(rank(fnd6_aox..."
+      },
+      {
+        "time": "09:19:48",
+        "message": "✅ 成功: rank(-1 * fnd6_acox)..."
+      },
+      {
+        "time": "09:23:19",
+        "message": "✅ 成功: rank(-1 * fnd6_capxv)..."
+      },
+      {
+        "time": "09:27:55",
+        "message": "✅ 成功: rank(-1 * fnd6_cicurr)..."
+      },
+      {
+        "time": "09:28:08",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "09:28:19",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "09:32:40",
+        "message": "✅ 成功: rank(depre_amort)..."
+      },
+      {
+        "time": "09:37:08",
+        "message": "✅ 成功: group_rank(rank(-1/cap) * fnd6..."
+      },
+      {
+        "time": "09:38:52",
+        "message": "✅ 成功: rank(-1/cap) * fnd6_cimii..."
+      },
+      {
+        "time": "09:38:58",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "09:40:47",
+        "message": "✅ 成功: if_else(rank(fnd6_aqc) > 0.5, ..."
+      },
+      {
+        "time": "09:41:00",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "09:45:28",
+        "message": "✅ 成功: rank(-1/cap) * cashflow_fin..."
+      },
+      {
+        "time": "09:49:18",
+        "message": "✅ 成功: group_neutralize(rank(-1 * fnd..."
+      },
+      {
+        "time": "09:51:05",
+        "message": "✅ 成功: rank(cashflow_fin)..."
+      },
+      {
+        "time": "09:55:06",
+        "message": "✅ 成功: ts_decay_linear(power(rank(cog..."
+      },
+      {
+        "time": "09:57:13",
+        "message": "✅ 成功: group_neutralize(power(rank(as..."
+      },
+      {
+        "time": "10:01:22",
+        "message": "✅ 成功: rank(fnd6_acox)..."
+      },
+      {
+        "time": "10:03:44",
+        "message": "✅ 成功: rank(fnd6_ch)..."
+      },
+      {
+        "time": "10:07:09",
+        "message": "✅ 成功: rank(power(rank(bookvalue_ps),..."
+      },
+      {
+        "time": "10:12:31",
+        "message": "✅ 成功: rank(-1/cap) * cashflow_divide..."
+      },
+      {
+        "time": "10:15:42",
+        "message": "✅ 成功: if_else(rank(fnd6_cik) > 0.5, ..."
+      },
+      {
+        "time": "10:17:09",
+        "message": "✅ 成功: rank(power(rank(fnd6_beta), 0...."
+      },
+      {
+        "time": "10:17:15",
+        "message": "❌ 失败: Attempted to use unknown variable \"market_cap\". <linkToCommonErrorMessages>Learn more</linkToCommonErrorMessages>"
+      },
+      {
+        "time": "10:17:17",
+        "message": "回测完成: 205 成功, 118 失败"
+      }
+    ],
+    "params": {
+      "universe": "TOP3000",
+      "region": "USA",
+      "decay": 30,
+      "neutralization": "SUBINDUSTRY",
+      "truncation": 0.08,
+      "test_period": "P2Y0M",
+      "delay": 5.0,
+      "auto_retry": true,
+      "concurrency": 1,
+      "request_delay": 3.0
+    }
+  }
+]

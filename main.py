@@ -22,6 +22,7 @@ from scripts.workflow import run_full_workflow
 from core.api_client import BrainAPIClient
 from core.db_manager import get_database
 from scripts.factor_builder import build_factor_pipeline, save_factors_for_batch_test
+from core.neutralization_tester import NeutralizationTester, get_neutralization_options
 
 # 统一文件路径
 ALPHA_ID_PATH = "data/alphas/alpha_ids.txt"  # 待回测的Alpha ID列表
@@ -262,18 +263,19 @@ def main():
         print("6: 批量回测 Alpha (从 data/alphas/to_test.txt)")
         print("7: 回测 -> 筛选 -> 提交 (一键完成)")
         print("8: 启动 Web 前端")
+        print("9: 中性化组合测试 (测试所有中性化×maxTrade)")
         print("-" * 50)
         print("0: 退出系统")
         print("-" * 50)
 
         try:
-            choice = input("\n请选择操作 (0-8): ").strip()
+            choice = input("\n请选择操作 (0-9): ").strip()
             if choice == '0':
                 print("再见!")
                 break
             choice = int(choice)
         except ValueError:
-            print("无效的输入,请输入 0-8 之间的数字")
+            print("无效的输入,请输入 0-9 之间的数字")
             continue
 
         print()
@@ -433,8 +435,87 @@ def main():
                 print("未找到配置文件 data/config.json")
                 print("请先执行选项1/2同步后，使用选项3手动提交")
 
+        elif choice == 9:
+            # 中性化组合测试
+            print("\n" + "=" * 50)
+            print("中性化组合测试")
+            print("=" * 50)
+            print("测试所有中性化方式 × maxTrade (ON/OFF) 组合")
+            print("\n优质Alpha筛选条件:")
+            print("1. 换手率 <= 0.4, Sharpe >= 1.2, Margin >= 0.0009")
+            print("2. 换手率 <= 0.4, Sharpe >= 1.5, Margin >= 0.001")
+            print("3. 换手率 <= 0.6, Sharpe >= 2.0, Margin >= 0.0015")
+            print("=" * 50)
+
+            # 输入Alpha表达式
+            alpha_id = input("\n请输入Alpha ID (用于获取表达式和打标签): ").strip()
+            if not alpha_id:
+                print("Alpha ID不能为空")
+            else:
+                # 获取Alpha信息
+                client = BrainAPIClient()
+                try:
+                    alpha_info = client.get_alpha(alpha_id)
+                    if not alpha_info:
+                        print(f"无法获取Alpha {alpha_id} 的信息")
+                    else:
+                        expression = alpha_info.get('regular', {}).get('code', '')
+                        region = alpha_info.get('settings', {}).get('region', 'USA')
+                        universe = alpha_info.get('settings', {}).get('universe', 'TOP3000')
+                        decay = int(alpha_info.get('settings', {}).get('decay', 30))
+                        truncation = float(alpha_info.get('settings', {}).get('truncation', 0.08))
+
+                        # 显示将测试的组合
+                        netu_options = get_neutralization_options(region)
+                        print(f"\n将测试 {len(netu_options)} 种中性化 × 2 种maxTrade = {len(netu_options) * 2} 个组合")
+                        print(f"中性化方式: {', '.join(netu_options)}")
+                        print(f"maxTrade: ON, OFF")
+
+                        confirm = input("\n确认开始测试? (y/N): ").strip().lower()
+                        if confirm == 'y':
+                            def progress_callback(current, total, result):
+                                status = "✓" if result.get('status') == 'OK' else "✗"
+                                quality = "★" if result.get('is_quality') else " "
+                                print(f"  [{current}/{total}] {status} {quality} "
+                                      f"{result.get('neutralization')}/{result.get('max_trade')} "
+                                      f"Sharpe={result.get('sharpe', 0):.3f}")
+
+                            tester = NeutralizationTester(
+                                expression=expression,
+                                region=region,
+                                universe=universe,
+                                decay=decay,
+                                truncation=truncation,
+                                base_alpha_id=alpha_id,
+                                progress_callback=progress_callback
+                            )
+
+                            results = tester.test_all_combinations()
+
+                            # 显示结果摘要
+                            summary = tester.get_summary()
+                            print(f"\n{'=' * 50}")
+                            print("测试结果摘要")
+                            print(f"{'=' * 50}")
+                            print(f"总组合数: {summary['total_combinations']}")
+                            print(f"成功完成: {summary['completed']}")
+                            print(f"优质Alpha: {summary['quality_count']}")
+                            print(f"最佳Sharpe: {summary['best_sharpe']:.3f}")
+
+                            if summary['quality_alphas']:
+                                print(f"\n优质Alpha列表:")
+                                for qa in summary['quality_alphas']:
+                                    print(f"  - {qa['alpha_id'][:20]}... "
+                                          f"{qa['neutralization']}/{qa['max_trade']} "
+                                          f"Sharpe={qa['sharpe']:.3f}")
+                        else:
+                            print("已取消")
+
+                except Exception as e:
+                    print(f"获取Alpha信息失败: {e}")
+
         else:
-            print("无效的选择,请输入 0-7 之间的数字")
+            print("无效的选择,请输入 0-9 之间的数字")
 
         input("\n按回车键继续...")
 
